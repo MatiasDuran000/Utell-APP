@@ -36,8 +36,31 @@ $$(document).on('page:init', function (e) {
 })
 
 // Option 2. Using live 'page:init' event handlers for each page
+
+$$(document).on('page:init', '.page[data-name="index"]', function (e) {
+  // Do something here when page with data-name="about" attribute loaded and initialized
+  ocultaNavTool();
+  
+})
+
 $$(document).on('page:init', '.page[data-name="about"]', function (e) {
     // Do something here when page with data-name="about" attribute loaded and initialized
-    console.log(e);
-    alert('Hello');
+    muestraNavTool();
+  
+    
 })
+
+
+
+function ocultaNavTool() {
+  $$(".navbar").addClass("oculto").removeClass("visible");
+  $$(".toolbar").addClass("oculto").removeClass("visible");
+  $$(".page").addClass("no-toolbar").addClass("no-navbar");
+
+}
+
+function muestraNavTool() {
+  $$(".navbar").addClass("visible").removeClass("oculto");
+  $$(".toolbar").addClass("visible").removeClass("oculto");
+  $$(".page").removeClass("no-toolbar").removeClass("no-navbar");
+}

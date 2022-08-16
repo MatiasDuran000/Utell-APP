@@ -30,8 +30,6 @@
     <link rel="stylesheet" href="css/icons.css">
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="css/app.css">
-
-    <link rel="stylesheet" href="css/utell.css">
 </head>
 
 <body>
@@ -65,71 +63,34 @@
             <div data-name="index" class="page">
                 <!-- Scrollable page content -->
                 <div class="page-content">
-                    <div class="">
+                    <div class="block">
+                        <p>Page content goes here</p>
+                        <!-- Link to another page -->
+                        <a href="/about/">About app</a>
 
-                        <div class="row display-flex fondoLogin">
-                            <div class="col-35">&nbsp;</div>
-                            <div class="col-30 pt20 align-items-center altoLogin">
-                                <img src="img/logo.png" width="100%">
-                            </div>
-                            <div class="col-35">&nbsp;</div>
-                            <div class="col-100 recuadroLogin">
-                                <h1 class="textoNaranja margenIzquierda">Bienvenido</h1>
-                            </div>
+                        <!-- In data-popup attribute we specify CSS selector of popup we need to open -->
+                        <p><a href="#" data-popup=".my-popup" class="popup-open">Open Popup</a></p>
 
-                        </div>
-
-                        <div class="row ">
-                            
-                            <div class="col-100">
-                                <div class="list no-hairlines-md">
-                                    <ul>
-                                    <li class="item-content item-input item-input-with-info">
-                                        <div class="item-media">
-                                        <i class="icon demo-list-icon"></i>
+                        <!-- And somewhere in DOM -->
+                        <div class="popup my-popup">
+                            <div class="view">
+                                <div class="page">
+                                    <div class="navbar">
+                                        <div class="navbar-bg"></div>
+                                        <div class="navbar-inner">
+                                            <div class="title">Popup</div>
+                                            <div class="right">
+                                                <!-- Link to close popup -->
+                                                <a class="link popup-close">Close</a>
+                                            </div>
                                         </div>
-                                        <div class="item-inner">
-                                        <div class="item-title item-label">Email</div>
-                                        <div class="item-input-wrap">
-                                            <input type="email" placeholder="Tu email" required validate />
-                                            <span class="input-clear-button"></span>
-                                            <div class="item-input-info"></div>
-                                        </div>
-                                        </div>
-                                    </li>
-                                    <li class="item-content item-input item-input-with-info">
-                                        <div class="item-media">
-                                        <i class="icon demo-list-icon"></i>
-                                        </div>
-                                        <div class="item-inner">
-                                        <div class="item-title item-label">Contraseña</div>
-                                        <div class="item-input-wrap">
-                                            <input type="password" placeholder="Tu contraseña" required validate />
-                                            <span class="input-clear-button"></span>
-                                            <div class="item-input-info"></div>
-                                        </div>
-                                        </div>
-                                    </li>
-                                    </ul>
+                                    </div>
+                                    <div class="page-content">
+                                      ...
+                                    </div>
                                 </div>
-                                 
-
-
-
-
-
-
-
-
                             </div>
-
-
-
-
                         </div>
-
-                        
-                        
                     </div>
                 </div>
             </div>

@@ -1,0 +1,41 @@
+.textoNaranja
+{
+    color:#ff6827;
+}
+
+.margenIzquierda
+{
+    padding-left:40px;
+}
+
+.oculto{
+    visibility: hidden;
+    display: none;
+}
+.visible{
+    visibility: visible;
+    display: block;
+}
+
+.fondoLogin {
+    background-image: url("../img/unsplash.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.altoLogin {
+    height: 30vh;
+    min-height: 400px;
+}
+
+.recuadroLogin {
+    border-radius: 35px 35px 0 0;
+    background-color: white;
+    margin-top: -35px;
+}
+
+.pt20
+{
+    padding-top:20%;
+}
