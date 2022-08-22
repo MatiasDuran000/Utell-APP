@@ -16,7 +16,7 @@ var app = new Framework7({
     routes: [
       { path: '/about/', url: 'about.html', },
       { path: '/registrarse/', url: 'registrarse.html', },
-      { path: '/about/', url: 'about.html', },
+      { path: '/miPerfil/', url: 'miPerfil.html', },
       { path: '/about/', url: 'about.html', },
       { path: '/about/', url: 'about.html', },
       { path: '/about/', url: 'about.html', },
@@ -33,22 +33,25 @@ $$(document).on('deviceready', function() {
 });
 
 // Option 1. Using one 'page:init' handler for all pages
-$$(document).on('page:init', function (e) {
-    // Do something here when page loaded and initialized
-    console.log(e);
+$$(document).on('page:init', function (e,page) {
+    if (page.name=="index" || page.name=="registrarse" ) {
+      ocultaNavTool();
+    } else {
+      muestraNavTool();
+    }
 })
 
 // Option 2. Using live 'page:init' event handlers for each page
 
 $$(document).on('page:init', '.page[data-name="index"]', function (e) {
   // Do something here when page with data-name="about" attribute loaded and initialized
-  ocultaNavTool();
+  
   
 })
 
 $$(document).on('page:init', '.page[data-name="about"]', function (e) {
     // Do something here when page with data-name="about" attribute loaded and initialized
-    muestraNavTool();
+    
   
     
 })
