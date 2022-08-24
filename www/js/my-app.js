@@ -17,7 +17,7 @@ var app = new Framework7({
       { path: '/about/', url: 'about.html', },
       { path: '/registrarse/', url: 'registrarse.html', },
       { path: '/miPerfil/', url: 'miPerfil.html', },
-      { path: '/about/', url: 'about.html', },
+      { path: '/perfil/', url: 'perfil.html', },
       { path: '/about/', url: 'about.html', },
       { path: '/about/', url: 'about.html', },
 
