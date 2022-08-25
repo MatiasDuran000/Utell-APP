@@ -19,7 +19,7 @@ var app = new Framework7({
       { path: '/miPerfil/', url: 'miPerfil.html', },
       { path: '/perfil/', url: 'perfil.html', },
       { path: '/feed/', url: 'feed.html', },
-      { path: '/about/', url: 'about.html', },
+      { path: '/busqueda/', url: 'busqueda.html', },
 
     ]
     // ... other parameters
