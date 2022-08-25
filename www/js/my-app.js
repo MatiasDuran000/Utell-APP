@@ -18,7 +18,7 @@ var app = new Framework7({
       { path: '/registrarse/', url: 'registrarse.html', },
       { path: '/miPerfil/', url: 'miPerfil.html', },
       { path: '/perfil/', url: 'perfil.html', },
-      { path: '/about/', url: 'about.html', },
+      { path: '/feed/', url: 'feed.html', },
       { path: '/about/', url: 'about.html', },
 
     ]
@@ -102,14 +102,14 @@ function fnLogin() {
                 nombre = datos[0].nombre;
                 apellido = datos[0].apellido;
                 console.log(nombre);
-                idUsuario=0;
                 if (idUsuario>0) {
-                    mainView.router.navigate("/perfil/");
+                    mainView.router.navigate("/miPerfil/");
                 } else {
                   app.dialog.alert(data);
                 }
             
     });
+
 
 
 
