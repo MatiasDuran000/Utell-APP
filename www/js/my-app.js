@@ -5,7 +5,7 @@ var app = new Framework7({
     // App root element
     root: '#app',
     // App Name
-    name: 'My App',
+    name: 'U-Tell',
     // App id
     id: 'com.myapp.test',
     // Enable swipe panel
@@ -27,6 +27,10 @@ var app = new Framework7({
 
 var mainView = app.views.create('.view-main');
 
+var urlAPI="http://utell.grupophi.com/api/";
+
+var nombre="",apellido="",email="";
+
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
@@ -45,7 +49,9 @@ $$(document).on('page:init', function (e,page) {
 
 $$(document).on('page:init', '.page[data-name="index"]', function (e) {
   // Do something here when page with data-name="about" attribute loaded and initialized
-  
+  $$("#indexLogin").on("click", fnLogin);
+
+
   
 })
 
@@ -70,3 +76,42 @@ function muestraNavTool() {
   $$(".toolbar").addClass("visible").removeClass("oculto");
   $$(".page").removeClass("no-toolbar").removeClass("no-navbar");
 }
+
+
+
+
+
+
+
+
+
+
+/* MIS FUNCIONES */
+function fnLogin() {
+  email = $$("#indexEmail").val();
+  pass = $$("#indexPass").val();
+
+  url = urlAPI+"login";
+    app.request.post(url, { email: email, password: pass }, function(data) {
+
+                console.log(data);
+                var datos = JSON.parse(data); 
+                console.log("OK");
+                //idUsuario = datos.id;
+                idUsuario = datos[0].idUsuario;
+                nombre = datos[0].nombre;
+                apellido = datos[0].apellido;
+                console.log(nombre);
+                idUsuario=0;
+                if (idUsuario>0) {
+                    mainView.router.navigate("/perfil/");
+                } else {
+                  app.dialog.alert(data);
+                }
+            
+    });
+
+
+
+}
+
