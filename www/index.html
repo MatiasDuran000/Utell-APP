@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+<head class="fondo">
     <!--
         Customize this policy to fit your own app's needs. For more guidance, see:
             https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
@@ -21,7 +21,7 @@
     <!-- Color theme for statusbar -->
     <!-- <meta name="theme-color" content="#2196f3"> -->
     <meta name="color-scheme" content="light dark">
-
+ 
     <!-- Your app title -->
     <title>My App</title>
     <!-- Path to Framework7 Library CSS -->
@@ -30,10 +30,10 @@
     <link rel="stylesheet" href="css/icons.css">
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="css/app.css">
-
+ 
     <link rel="stylesheet" href="css/utell.css">
 </head>
-
+ 
 <body>
     <div id="app">
         <!-- Statusbar overlay -->
@@ -65,7 +65,7 @@
                 <!-- Scrollable page content -->
                 <div class="page-content">
                     <div class="">
-
+ 
                         <div class="row display-flex fondoLogin">
                             <div class="col-35">&nbsp;</div>
                             <div class="col-30 pt20 align-items-center altoLogin">
@@ -75,9 +75,9 @@
                             <div class="col-100 recuadroLogin">
                                 <h1 class="textoNaranja margenIzquierda titulo1">Bienvenido</h1>
                             </div>
-
+ 
                         </div>
-
+ 
                         <div class="row ">
                             
                             <div class="col-100">
@@ -101,36 +101,38 @@
                                               </div>
                                             </div>
                                         </li>
-                                    </ul>
-                                    <input type="button" id="indexLogin" class="button boton-login" value="Iniciar sesión">
-                                    <div>
-                                        <span class="crear-cuenta-q">¿No tienes una cuenta?</span>
-                                        <a href="/registrarse/" class="crear-cuenta">Crear cuenta</a>
+                                    </ul> 
+                                    <div class="botones-login">
+                                        <input type="button" id="indexLogin" class="boton" value="Iniciar sesión">
+                                        <div class="crecue">
+                                            <span class="crear-cuenta-q">¿No tienes una cuenta?</span>
+                                            <a href="/registrarse/" class="crear-cuenta">Crear cuenta</a>
+                                        </div>
+                                        <button class="button recuadroBoton boton-login" id="sesionGoogle"><img src="img/Vector.svg" class="icon-google">Continuar con Google</button>
                                     </div>
-                                    <button class="button recuadroBoton boton-login"><img src="img/Vector.svg" class="icon-google">Continuar con Google</button>
                                 </div>
-
-
+ 
+ 
                                 <p>
                                 <a href="/miPerfil/" class="crear-cuenta">MI PERFIL - FK</a>
-                                <a href="/perfil/" class="crear-cuenta">PERFIL - FK</a>
+                                <a href="/Perfil/" class="crear-cuenta">PERFIL - FK</a>
                                 <a href="/feed/" class="crear-cuenta">FEED - FK</a>
                                 </p>
-
-
-
-
-
-
-
-
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
                             </div>
-
-
-
-
+ 
+ 
+ 
+ 
                         </div>
-
+ 
                         
                         
                     </div>
@@ -138,12 +140,13 @@
             </div>
         </div>
     </div>
-
-
+ 
+ 
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="lib/framework7/framework7-bundle.min.js"></script>
     <!--<script type="text/javascript" src="lib/framework7/framework7.js"></script>-->
     <script type="text/javascript" src="js/my-app.js"></script>
 </body>
-
+ 
 </html>
+ 
