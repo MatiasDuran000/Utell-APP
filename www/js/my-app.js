@@ -29,7 +29,7 @@ var mainView = app.views.create('.view-main');
 
 var urlAPI="http://utell.grupophi.com/api/";
 
-var nombre="",apellido="",email="";
+var nombre="",apellido="",email="",idUsuario=0,fNac="",fotoPerfil="",celular="",tipoPerfil="",descripcion="",trayectoria="",idCiudad="";
 
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
@@ -49,11 +49,15 @@ $$(document).on('page:init', function (e,page) {
 
 $$(document).on('page:init', '.page[data-name="index"]', function (e) {
   // Do something here when page with data-name="about" attribute loaded and initialized
-  $$("#indexLogin").on("click", fnLogin);
-
-
-  
+  $$("#indexLogin").on("click", fnLogin);  
 })
+
+
+$$(document).on('page:init', '.page[data-name="miPerfil"]', function (e) {
+  // Do something here when page with data-name="about" attribute loaded and initialized
+  cargarMiPerfil();  
+})
+
 
 $$(document).on('page:init', '.page[data-name="about"]', function (e) {
     // Do something here when page with data-name="about" attribute loaded and initialized
@@ -94,14 +98,17 @@ function fnLogin() {
   url = urlAPI+"login";
     app.request.post(url, { email: email, password: pass }, function(data) {
 
-                console.log(data);
                 var datos = JSON.parse(data); 
-                console.log("OK");
-                //idUsuario = datos.id;
-                idUsuario = datos[0].idUsuario;
+                idUsuario = parseInt(datos[0].idUsuario);
                 nombre = datos[0].nombre;
-                apellido = datos[0].apellido;
-                console.log(nombre);
+                apellido = datos[0].apellido;              
+                fNac=datos[0].fNac;
+                fotoPerfil=datos[0].fotoPerfil;
+                celular=datos[0].celular;
+                tipoPerfil=datos[0].tipoPerfil;
+                descripcion=datos[0].descripcion;
+                trayectoria=datos[0].trayectoria;
+                idCiudad=datos[0].idCiudad;
                 if (idUsuario>0) {
                     mainView.router.navigate("/miPerfil/");
                 } else {
@@ -109,9 +116,14 @@ function fnLogin() {
                 }
             
     });
-
-
-
-
 }
 
+function cargarMiPerfil(){
+
+  if(tipoPerfil!=null)
+    {$$("#miPerfilImg").attr("src",fotoPerfil);}
+  $$("#miPerfilNyA").html(nombre + " " + apellido);
+  $$("#miPerfilTipo").html(tipoPerfil);
+  $$("#miPerfilCiudad").html(idCiudad);
+  $$("#miPerfilEdad").html(fNac);
+}
