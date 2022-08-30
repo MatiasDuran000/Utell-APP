@@ -72,7 +72,7 @@
                                 <img src="img/logo.png" width="100%">
                             </div>
                             <div class="col-35">&nbsp;</div>
-                            <div class="col-100 recuadroLogin">
+                            <div id="bienvenido" class="col-100 recuadroLogin">
                                 <h1 class="textoNaranja margenIzquierda titulo1">Bienvenido</h1>
                             </div>
  
@@ -81,34 +81,25 @@
                         <div class="row ">
                             
                             <div class="col-100">
-                                <div class="list no-hairlines-md">
-                                    <ul>
+                                <div class="list no-hairlines-md text-align-center">
                                         <!--Input email-->
-                                        <li class="item-content item-input">
-                                          <div class="item-inner">
-                                            <div class="item-input-wrap">
-                                              <input id="indexEmail" type="email" placeholder="Ingrese su email" />
-                                              <span class="input-clear-button"></span>
-                                            </div>
-                                          </div>
-                                        </li>
+                                        <div class="inputLogin">
+                                          <input id="indexEmail" type="email" placeholder="Ingrese su email">
+                                          <span class="input-clear-button"></span>
+                                        </div>
                                         <!--Input password-->
-                                        <li class="item-content item-input">
-                                            <div class="item-inner">
-                                              <div class="item-input-wrap">
-                                                <input id="indexPass" type="password" placeholder="Ingrese su contraseña" />
-                                                <span class="input-clear-button"></span>
-                                              </div>
-                                            </div>
-                                        </li>
-                                    </ul> 
+                                          <div class="inputLogin">
+                                             <input id="indexPass" type="password" placeholder="Ingrese su contraseña" />
+                                             <span class="input-clear-button"></span>
+                                          </div>
+
                                     <div class="botones-login">
                                         <input type="button" id="indexLogin" class="boton" value="Iniciar sesión">
                                         <div class="crecue">
                                             <span class="crear-cuenta-q">¿No tienes una cuenta?</span>
                                             <a href="/registrarse/" class="crear-cuenta">Crear cuenta</a>
                                         </div>
-                                        <button class="button recuadroBoton boton-login" id="sesionGoogle"><img src="img/Vector.svg" class="icon-google">Continuar con Google</button>
+                                        <button class="recuadroBoton boton-login" id="sesionGoogle"><img src="img/Vector.svg" class="icon-google">Continuar con Google</button>
                                     </div>
                                 </div>
  
