@@ -143,22 +143,30 @@
     color:#b1b1b1;
 }
  
-.botonPerfil1
+.botonPerfil
 {
     height:40px;
     margin-top:15px;
     font-family:'Montserrat',sans-serif;
     font-weight:500;
     font-size:12px;
+    font-weight:400;
+    background-color:white;
+    border-color:transparent;
+    border-radius:15px;
+    text-align:start;
+    display:flex;
+    align-items:center;
+    box-shadow:2px 2px 4px rgba(0,0,0,.25);
+}
+
+.botonPerfil1
+{
+    color:black;
 }
  
 .botonPerfil2
 {
-    height:40px;
-    margin-top:15px;
-    font-family:'Montserrat',sans-serif;
-    font-weight:600;
-    font-size:12px;
     color:#ff0000;
 }
  
