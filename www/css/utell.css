@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
- 
+
 .titulo1{
     font-family:'Montserrat',sans-serif;
     font-weight: 600;
     font-size:35px;
 }
- 
+
 .textoNaranja{
     color:#ff6827;
 }
- 
+
 .boton{
     background-color: #FF6827;
     color: #ffffff;
@@ -21,9 +21,11 @@
     font-family:'Montserrat',sans-serif;
     font-weight: lighter;
 }
- 
+
 .recuadroBoton {
     border: 1px solid #ff6827;
+    background-color:white;
+    color:#ff6827;
     padding: 5px;
     border-radius: 10px;
     width: 225px;
@@ -112,8 +114,7 @@
  
 .page-content
 {
-    display:flex;
-    justify-content:center;
+    text-align:center;
 }
  
 .perfil
@@ -138,12 +139,6 @@
     font-weight:600;
     font-size:12px;
     color:#b1b1b1;
-}
- 
-.page-content
-{
-    display:flex;
-    flex-direction:column;
 }
  
 .botonPerfil1
@@ -195,4 +190,72 @@
 #sesionGoogle{
 
     margin: auto;
+}
+
+.botonFeed
+{
+    font-family:'Montserrat', sans-serif;
+    font-size:12px;
+    font-weight:400;
+    width:131px;
+    height:30px;
+    border-color:transparent;
+}
+
+#botonFeed1
+{
+    border-radius: 7px 0px 0px 7px;
+}
+
+#botonFeed2
+{
+    border-radius: 0px 7px 7px 0px;
+    margin-left: -1.1%;
+}
+
+.activo
+{
+    background-color:#ff6827;
+    color:white;
+    box-shadow:inset 0px 2px 2px rgba(0,0,0,.25);
+}
+
+.inactivo
+{
+    background-color:#e7e7e7;
+    color:#ff6827;
+    box-shadow:0px 2px 2px rgba(0,0,0,.25);
+}
+
+.dobleBoton
+{
+    text-align:center;
+    margin-top:12px;
+}
+
+#feeds
+{
+    text-align:center;
+}
+
+#bienvenido
+{
+    text-align:left;
+}
+
+.dobleInputLogin
+{
+    text-align:center;
+}
+
+.inputLogin
+{
+    width:301px;
+    height:37px;
+    background-color:rgba(196,196,196,.10);
+    border-radius:12px;
+    font-family:'Montserrat',sans-serif;
+    font-size:12px;
+    font-weight:300;
+    color:#5f5f5f;
 }

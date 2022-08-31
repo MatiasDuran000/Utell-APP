@@ -59,13 +59,30 @@ $$(document).on('page:init', '.page[data-name="miPerfil"]', function (e) {
 })
 
 
+$$(document).on('page:init', '.page[data-name="feed"]', function (e) {
+  $$("#botonFeed1").on("click", function() {
+    $$("#botonFeed1").removeClass("inactivo").addClass("activo");
+    $$("#botonFeed2").removeClass("activo").addClass("inactivo");
+    //fnListaFeedsParaTi();
+  } );
+
+  $$("#botonFeed2").on("click", function() {
+    $$("#botonFeed2").removeClass("inactivo").addClass("activo");
+    $$("#botonFeed1").removeClass("activo").addClass("inactivo");
+    //fnListaFeedsTuRed();
+  });
+
+})
+
 $$(document).on('page:init', '.page[data-name="about"]', function (e) {
     // Do something here when page with data-name="about" attribute loaded and initialized
     
-  
-    
 })
 
+$$(document).on('page:init', '.page[data-name="busqueda"]', function (e) {
+  // Do something here when page with data-name="about" attribute loaded and initialized
+  
+})
 
 
 function ocultaNavTool() {
@@ -120,8 +137,9 @@ function fnLogin() {
 
 function cargarMiPerfil(){
 
-  if(tipoPerfil!=null)
-    {$$("#miPerfilImg").attr("src",fotoPerfil);}
+  if(tipoPerfil!="") {
+    $$("#miPerfilImg").attr("src",fotoPerfil);
+  }
   $$("#miPerfilNyA").html(nombre + " " + apellido);
   $$("#miPerfilTipo").html(tipoPerfil);
   $$("#miPerfilCiudad").html(idCiudad);
