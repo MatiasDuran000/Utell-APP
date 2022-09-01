@@ -264,8 +264,6 @@
     font-family:'Montserrat', sans-serif;
     font-size:20px;
     font-weight:500;
-    width:130px;
-    height:24px;
     border-color:transparent;
 }
 
@@ -273,7 +271,6 @@
 {
     text-align:left;
     display:flex;
-    justify-content:flex-start;
     border-bottom:1px solid rgba(177,177,177,.5);
     padding:10px 0;
 }
@@ -294,4 +291,16 @@
     font-size:12px;
     font-weight:500;
     color:black;
+}
+
+.opcionNotif
+{
+    font-family:'Montserrat',sans-serif;
+    font-size:12px;
+    font-weight:400;
+}
+
+.icono-volver
+{
+    margin-right:10px;
 }

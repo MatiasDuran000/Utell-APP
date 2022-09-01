@@ -72,7 +72,7 @@ $$(document).on('page:init', '.page[data-name="miPerfil"]', function (e) {
 })
 
 $$(document).on('page:init', '.page[data-name="config"]', function (e) {
-  $$("#volverMiPerfil").on("click",function(){mainView.router.navigate("/miPerfil/");})
+  $$("#volverConfig").on("click",function(){mainView.router.navigate("/miPerfil/");})
   
   $$("#editarPerfil").on("click", function(){mainView.router.navigate("/editarPerfil/");});
   $$("#preferencias").on("click", function(){mainView.router.navigate("/preferencias/");});
@@ -80,21 +80,6 @@ $$(document).on('page:init', '.page[data-name="config"]', function (e) {
   $$("#accesibilidad").on("click", function(){mainView.router.navigate("/accesibilidad/");});
   $$("#cambiarPass").on("click", function(){mainView.router.navigate("/cambiarPass/");});
   $$("#ayuda").on("click", function(){mainView.router.navigate("/ayuda/");});
-})
-
-$$(document).on('page:init', '.page[data-name="feed"]', function (e) {
-  $$("#botonFeed1").on("click", function() {
-    $$("#botonFeed1").removeClass("inactivo").addClass("activo");
-    $$("#botonFeed2").removeClass("activo").addClass("inactivo");
-    //fnListaFeedsParaTi();
-  } );
-
-  $$("#botonFeed2").on("click", function() {
-    $$("#botonFeed2").removeClass("inactivo").addClass("activo");
-    $$("#botonFeed1").removeClass("activo").addClass("inactivo");
-    //fnListaFeedsTuRed();
-  });
-
 })
 
 $$(document).on('page:init', '.page[data-name="feed"]', function (e) {
@@ -124,11 +109,31 @@ $$(document).on('page:init', '.page[data-name="busqueda"]', function (e) {
 $$(document).on('page:init', '.page[data-name="editarPerfil"]', function (e) {
   // Do something here when page with data-name="about" attribute loaded and initialized
   
+  $$("#volverEditarPerfil").on("click",function(){mainView.router.navigate("/config/");})
+  
   if(tipoPerfil!="") {
     $$("#editarPerfilImg").attr("src", fotoPerfil);
   }
 
 })
+
+$$(document).on('page:init', '.page[data-name="notifConfig"]', function (e) {
+  // Do something here when page with data-name="about" attribute loaded and initialized
+
+  $$("#volverNotifConfig").on("click",function(){mainView.router.navigate("/config/");})
+
+  /*
+  var m = "#" + n;
+
+  $$(m).on("click",function(n){
+    $$(".activado").removeClass("activado").addClass("desactivado");
+  })
+
+  fnInterruptor();
+  */
+
+})
+
 
 
 function ocultaNavTool() {
@@ -190,4 +195,10 @@ function cargarMiPerfil(){
   $$("#miPerfilTipo").html(tipoPerfil);
   $$("#miPerfilCiudad").html(idCiudad);
   $$("#miPerfilEdad").html(fNac);
+}
+
+function fnInterruptor()
+{
+  $$(".activado").attr("src","img/Activado.svg");
+  $$(".desactivado").attr("src","img/Desactivado.svg");
 }

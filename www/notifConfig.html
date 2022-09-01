@@ -1,0 +1,28 @@
+<!-- We don't need a full layout in this file because this page will be parsed with Ajax.  -->
+<div class="page" data-name="notifConfig">
+    <div class="page-content">
+        <div class="block">
+            <div class="column">
+                <div style="margin-bottom:30px" class="row text-align-left">
+                    <button id="volverNotifConfig" class="botonVolver"><img class="icono-volver" src="img/volver.svg">Configuración</button>
+                </div>
+                <div class="row botonesEditarPerfil" style="justify-content:space-between;">
+                    <span class="opcionNotif">Silenciar notificaciones</span>
+                    <button id="silenciarNotif"><img id="intSilenciarNotif" class="desactivado" src="img/Desactivado.svg" onclick="pressbutton('intSilenciarNotif')"></button>
+                </div>
+                <div class="row botonesEditarPerfil" style="justify-content:space-between;">
+                    <span class="opcionNotif">Notificaciones de comentarios</span>
+                    <button id="notifComent"><img id="intNotifComent" class="activado" src="img/Activado.svg" onclick="pressbutton('intNotifComent')"></button>
+                </div>
+                <div class="row botonesEditarPerfil" style="justify-content:space-between;">
+                    <span class="opcionNotif">Notificaciones de mensajes</span>
+                    <button id="notifMDs"><img id="intNotifMDs" class="activado" src="img/Activado.svg" onclick="pressbutton('intNotifMDs')"></button>
+                </div>
+                <div class="row botonesEditarPerfil" style="justify-content:space-between;">
+                    <span class="opcionNotif">Notificaciones de nuevos amigos</span>
+                    <button id="notifAmigos"><img id="intNotifAmigos" class="activado" src="img/Activado.svg" onclick="pressbutton('intNotifAmigos')"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
