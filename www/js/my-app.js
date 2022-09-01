@@ -21,6 +21,12 @@ var app = new Framework7({
       { path: '/feed/', url: 'feed.html', },
       { path: '/busqueda/', url: 'busqueda.html', },
       { path: '/config/', url: 'configuracion.html', },
+      { path: '/editarPerfil/', url: 'editarPerfil.html', },
+      { path: '/preferencias/', url: 'preferencias.html', },
+      { path: '/notifConfig/', url: 'notifConfig.html', },
+      { path: '/accesibilidad/', url: 'accesibilidad.html', },
+      { path: '/cambiarPass/', url: 'cambiarPass.html', },
+      { path: '/ayuda/', url: 'ayuda.html', },
 
     ]
     // ... other parameters
@@ -56,14 +62,25 @@ $$(document).on('page:init', '.page[data-name="index"]', function (e) {
 
 $$(document).on('page:init', '.page[data-name="miPerfil"]', function (e) {
   // Do something here when page with data-name="about" attribute loaded and initialized
-  cargarMiPerfil();  
+  cargarMiPerfil();
+  $$("#config").on("click", function(){mainView.router.navigate("/config/");});
+  $$("#misAmigos").on("click", function(){mainView.router.navigate("/misAmigos/");});
+  $$("#misXPs").on("click", function(){mainView.router.navigate("/misXPs/");});
+  $$("#misConsultas").on("click", function(){mainView.router.navigate("/misConsultas/");});
+  $$("#borradores").on("click", function(){mainView.router.navigate("/borradores/");});
+  $$("#elementosGuardados").on("click", function(){mainView.router.navigate("/elementosGuardados/");});
 })
 
 $$(document).on('page:init', '.page[data-name="config"]', function (e) {
-  // Do something here when page with data-name="about" attribute loaded and initialized
-  $$("#config").on("click", fnConfig());
+  $$("#volverMiPerfil").on("click",function(){mainView.router.navigate("/miPerfil/");})
+  
+  $$("#editarPerfil").on("click", function(){mainView.router.navigate("/editarPerfil/");});
+  $$("#preferencias").on("click", function(){mainView.router.navigate("/preferencias/");});
+  $$("#notifConfig").on("click", function(){mainView.router.navigate("/notifConfig/");});
+  $$("#accesibilidad").on("click", function(){mainView.router.navigate("/accesibilidad/");});
+  $$("#cambiarPass").on("click", function(){mainView.router.navigate("/cambiarPass/");});
+  $$("#ayuda").on("click", function(){mainView.router.navigate("/ayuda/");});
 })
-
 
 $$(document).on('page:init', '.page[data-name="feed"]', function (e) {
   $$("#botonFeed1").on("click", function() {
@@ -103,6 +120,12 @@ $$(document).on('page:init', '.page[data-name="about"]', function (e) {
 $$(document).on('page:init', '.page[data-name="busqueda"]', function (e) {
   // Do something here when page with data-name="about" attribute loaded and initialized
 })
+
+$$(document).on('page:init', '.page[data-name="editarPerfil"]', function (e) {
+  // Do something here when page with data-name="about" attribute loaded and initialized
+
+})
+
 
 function ocultaNavTool() {
   $$(".navbar").addClass("oculto").removeClass("visible");
@@ -163,9 +186,4 @@ function cargarMiPerfil(){
   $$("#miPerfilTipo").html(tipoPerfil);
   $$("#miPerfilCiudad").html(idCiudad);
   $$("#miPerfilEdad").html(fNac);
-}
-
-function fnConfig()
-{
-  mainView.router.navigate("/config/");
 }

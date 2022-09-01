@@ -14,9 +14,9 @@
     background-color: #FF6827;
     color: #ffffff;
     border: 0px;
-    border-radius: 12px;
-    width: 140px;
-    height: 30px;
+    border-radius: 14px;
+    width: 150px;
+    height: 33px;
     margin-top: 10px;
     font-family:'Montserrat',sans-serif;
     font-weight: lighter;
@@ -255,4 +255,16 @@
 .dobleInputLogin
 {
     text-align:center;
+}
+.botonVolver
+{
+    text-align:left;
+    background-color:transparent;
+    color:black;
+    font-family:'Montserrat', sans-serif;
+    font-size:20px;
+    font-weight:500;
+    width:130px;
+    height:24px;
+    border-color:transparent;
 }
