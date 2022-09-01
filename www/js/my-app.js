@@ -20,6 +20,7 @@ var app = new Framework7({
       { path: '/perfil/', url: 'perfil.html', },
       { path: '/feed/', url: 'feed.html', },
       { path: '/busqueda/', url: 'busqueda.html', },
+      { path: '/config/', url: 'configuracion.html', },
 
     ]
     // ... other parameters
@@ -58,6 +59,26 @@ $$(document).on('page:init', '.page[data-name="miPerfil"]', function (e) {
   cargarMiPerfil();  
 })
 
+$$(document).on('page:init', '.page[data-name="config"]', function (e) {
+  // Do something here when page with data-name="about" attribute loaded and initialized
+  $$("#config").on("click", fnConfig());
+})
+
+
+$$(document).on('page:init', '.page[data-name="feed"]', function (e) {
+  $$("#botonFeed1").on("click", function() {
+    $$("#botonFeed1").removeClass("inactivo").addClass("activo");
+    $$("#botonFeed2").removeClass("activo").addClass("inactivo");
+    //fnListaFeedsParaTi();
+  } );
+
+  $$("#botonFeed2").on("click", function() {
+    $$("#botonFeed2").removeClass("inactivo").addClass("activo");
+    $$("#botonFeed1").removeClass("activo").addClass("inactivo");
+    //fnListaFeedsTuRed();
+  });
+
+})
 
 $$(document).on('page:init', '.page[data-name="feed"]', function (e) {
   $$("#botonFeed1").on("click", function() {
@@ -81,9 +102,7 @@ $$(document).on('page:init', '.page[data-name="about"]', function (e) {
 
 $$(document).on('page:init', '.page[data-name="busqueda"]', function (e) {
   // Do something here when page with data-name="about" attribute loaded and initialized
-  
 })
-
 
 function ocultaNavTool() {
   $$(".navbar").addClass("oculto").removeClass("visible");
@@ -144,4 +163,9 @@ function cargarMiPerfil(){
   $$("#miPerfilTipo").html(tipoPerfil);
   $$("#miPerfilCiudad").html(idCiudad);
   $$("#miPerfilEdad").html(fNac);
+}
+
+function fnConfig()
+{
+  mainView.router.navigate("/config/");
 }

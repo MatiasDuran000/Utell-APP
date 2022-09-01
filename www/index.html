@@ -29,9 +29,10 @@
     <!-- Path to icons -->
     <link rel="stylesheet" href="css/icons.css">
     <!-- Path to your custom app styles-->
-    <link rel="stylesheet" href="css/app.css">
- 
+    <link rel="stylesheet" href="css/app.css"> 
     <link rel="stylesheet" href="css/utell.css">
+    <link rel="stylesheet" href="css/ode.css">
+
 </head>
 
 <body>
@@ -55,8 +56,10 @@
             <div class="toolbar toolbar-bottom">
                 <div class="toolbar-inner">
                 <!-- Toolbar links -->
-                <a href="#" class="link">Link 1</a>
-                <a href="#" class="link">Link 2</a>
+                <a href="/feed/" class="link">feed</a>
+                <a href="/busqueda/" class="link">busqeuda</a>
+                <a href="/MD/" class="link">md</a>
+                <a href="/miPerfil/" class="link">miperfil</a>
                 </div>
             </div>
         
@@ -65,7 +68,6 @@
                 <!-- Scrollable page content -->
                 <div class="page-content">
                     <div class="">
- 
                         <div class="row display-flex fondoLogin">
                             <div class="col-35">&nbsp;</div>
                             <div class="col-30 pt20 align-items-center altoLogin">
@@ -75,31 +77,26 @@
                             <div id="bienvenido" class="col-100 recuadroLogin">
                                 <h1 class="textoNaranja margenIzquierda titulo1">Bienvenido</h1>
                             </div>
- 
                         </div>
- 
+
                         <div class="row ">
-                            
                             <div class="col-100">
                                 <div class="list no-hairlines-md">
                                         <!--Input email-->
                                         <div class="inputLogin">
-                                          <input id="indexEmail" type="email" placeholder="Ingrese su email">
-                                          <span class="input-clear-button"></span>
+                                            <input id="indexEmail" type="email" placeholder="Ingrese su email">
                                         </div>
                                         <!--Input password-->
-                                          <div class="inputLogin">
-                                             <input id="indexPass" type="password" placeholder="Ingrese su contraseña" />
-                                             <span class="input-clear-button"></span>
-                                          </div>
-                                          
+                                        <div class="inputLogin">
+                                            <input id="indexPass" type="password" placeholder="Ingrese su contraseña" />
+                                        </div>
                                     <div class="botones-login">
                                         <input type="button" id="indexLogin" class="boton" value="Iniciar sesión">
                                         <div class="crecue">
                                             <span class="crear-cuenta-q">¿No tienes una cuenta?</span>
                                             <a href="/registrarse/" class="crear-cuenta">Crear cuenta</a>
                                         </div>
-                                        <input type="button" class="recuadroBoton boton-login" id="sesionGoogle"><img src="img/Vector.svg" class="icon-google" value="Continuar con Google">
+                                        <button class="recuadroBoton boton-login" id="sesionGoogle"><img src="img/Vector.svg" class="icon-google">Continuar con Google</button>
                                     </div>
                                 </div>
  
@@ -108,15 +105,9 @@
                                 <a href="/miPerfil/" class="crear-cuenta">MI PERFIL - FK</a>
                                 <a href="/Perfil/" class="crear-cuenta">PERFIL - FK</a>
                                 <a href="/feed/" class="crear-cuenta">FEED - FK</a>
+                                <a href="/busqueda/" class="crear-cuenta">BUSCAR - FK</a>
                                 </p>
- 
- 
- 
- 
- 
- 
- 
- 
+
                             </div>
  
  

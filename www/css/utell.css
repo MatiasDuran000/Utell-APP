@@ -28,7 +28,9 @@
     color:#ff6827;
     padding: 5px;
     border-radius: 10px;
-    width: 225px;
+    width: 178px;
+    display:flex;
+    justify-content:center;
 }
  
 .crecue{
@@ -140,26 +142,33 @@
     font-size:12px;
     color:#b1b1b1;
 }
- 
-.botonPerfil1
-{
+
+.botonPerfil{
     height:40px;
     margin-top:15px;
     font-family:'Montserrat',sans-serif;
     font-weight:500;
     font-size:12px;
+    font-weight:400;
+    background-color:white;
+    border-color:transparent;
+    border-radius:15px;
+    text-align:start;
+    display:flex;
+    align-items:center;
+    box-shadow:2px 2px 4px rgba(0,0,0,.25);
 }
- 
+
+.botonPerfil1
+{
+    color:black;
+}
+
 .botonPerfil2
 {
-    height:40px;
-    margin-top:15px;
-    font-family:'Montserrat',sans-serif;
-    font-weight:600;
-    font-size:12px;
     color:#ff0000;
 }
- 
+
 .iconoPerfil1
 {
     margin-left:18px;
@@ -246,16 +255,4 @@
 .dobleInputLogin
 {
     text-align:center;
-}
-
-.inputLogin
-{
-    width:301px;
-    height:37px;
-    background-color:rgba(196,196,196,.10);
-    border-radius:12px;
-    font-family:'Montserrat',sans-serif;
-    font-size:12px;
-    font-weight:300;
-    color:#5f5f5f;
 }
