@@ -109,8 +109,8 @@
  
 .fotoperfil
 {
-    width:50%;
-    height:50%;
+    width:110px;
+    height:110px;
     border-radius:50%;
 }
  
@@ -267,4 +267,31 @@
     width:130px;
     height:24px;
     border-color:transparent;
+}
+
+.botonesEditarPerfil
+{
+    text-align:left;
+    display:flex;
+    justify-content:flex-start;
+    border-bottom:1px solid #b1b1b1;
+    padding:10px 0;
+}
+
+.nombreDato
+{
+    margin-right:40px;
+    font-family:'Montserrat',sans-serif;
+    font-size:12px;
+    font-weight:400;
+    color:#ff6827;
+    width:80px;
+}
+
+.dato
+{
+    font-family:'Montserrat',sans-serif;
+    font-size:12px;
+    font-weight:500;
+    color:black;
 }

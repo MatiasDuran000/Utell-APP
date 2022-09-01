@@ -123,6 +123,10 @@ $$(document).on('page:init', '.page[data-name="busqueda"]', function (e) {
 
 $$(document).on('page:init', '.page[data-name="editarPerfil"]', function (e) {
   // Do something here when page with data-name="about" attribute loaded and initialized
+  
+  if(tipoPerfil!="") {
+    $$("#editarPerfilImg").attr("src", fotoPerfil);
+  }
 
 })
 
