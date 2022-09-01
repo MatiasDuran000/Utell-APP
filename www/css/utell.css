@@ -274,7 +274,7 @@
     text-align:left;
     display:flex;
     justify-content:flex-start;
-    border-bottom:1px solid #b1b1b1;
+    border-bottom:1px solid rgba(177,177,177,.5);
     padding:10px 0;
 }
 
