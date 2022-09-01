@@ -54,3 +54,20 @@
 .inputLogin > input::placeholder{
     padding-left: 12px;
 }
+
+.imgC{
+    margin-left: 24px;
+}
+
+.imgP{
+    margin-right: 24px;
+}
+
+#botonMasToolbar {
+    position: relative;
+    width: 50px;
+    color: black; 
+    margin: auto;
+    margin-top: -20px;
+    text-align: center;
+}
