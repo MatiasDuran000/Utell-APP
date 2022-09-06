@@ -122,15 +122,28 @@ $$(document).on('page:init', '.page[data-name="notifConfig"]', function (e) {
 
   $$("#volverNotifConfig").on("click",function(){mainView.router.navigate("/config/");})
 
-  /*
-  var m = "#" + n;
+  $$(".interruptor").on("click",function(){
+    var elId = this.id;
 
-  $$(m).on("click",function(n){
-    $$(".activado").removeClass("activado").addClass("desactivado");
+    console.log(elId)
+    if($$("#"+elId).hasClass("activado"))
+    {
+      $$("#"+elId).removeClass("activado").addClass("desactivado");
+    }
+    else 
+    {
+      $$("#"+elId).removeClass("desactivado").addClass("activado");
+    }
+
+    fnInterruptor();
   })
 
-  fnInterruptor();
-  */
+})
+
+$$(document).on('page:init', '.page[data-name="accesibilidad"]', function (e) {
+  // Do something here when page with data-name="about" attribute loaded and initialized
+  
+  $$("#volverAccesibilidad").on("click",function(){mainView.router.navigate("/config/");})
 
 })
 

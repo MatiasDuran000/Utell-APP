@@ -304,3 +304,12 @@
 {
     margin-right:10px;
 }
+
+.opcionAccesibilidad
+{
+    text-align:right;
+    font-family:'Montserrat',sans-serif;
+    font-size:12px;
+    font-weight: 500;
+    color:#ff6827;
+}
