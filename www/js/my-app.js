@@ -27,6 +27,12 @@ var app = new Framework7({
       { path: '/accesibilidad/', url: 'accesibilidad.html', },
       { path: '/cambiarPass/', url: 'cambiarPass.html', },
       { path: '/ayuda/', url: 'ayuda.html', },
+      { path: '/reportarProblema/', url: 'reportarProblema.html', },
+      { path: '/privSeg/', url: 'privSeg.html', },
+      { path: '/faq/', url: 'faq.html', },
+      { path: '/ubicacionesPref/', url: 'ubicacionesPref.html', },
+      { path: '/universidadesPref/', url: 'universidadesPref.html', },
+      { path: '/carrerasPref/', url: 'carrerasPref.html', },
 
     ]
     // ... other parameters
@@ -109,7 +115,7 @@ $$(document).on('page:init', '.page[data-name="busqueda"]', function (e) {
 $$(document).on('page:init', '.page[data-name="editarPerfil"]', function (e) {
   // Do something here when page with data-name="about" attribute loaded and initialized
   
-  $$("#volverEditarPerfil").on("click",function(){mainView.router.navigate("/config/");})
+  $$("#volverEditarPerfil").on("click",function(){mainView.router.navigate("/config/");});
   
   if(tipoPerfil!="") {
     $$("#editarPerfilImg").attr("src", fotoPerfil);
@@ -120,7 +126,7 @@ $$(document).on('page:init', '.page[data-name="editarPerfil"]', function (e) {
 $$(document).on('page:init', '.page[data-name="notifConfig"]', function (e) {
   // Do something here when page with data-name="about" attribute loaded and initialized
 
-  $$("#volverNotifConfig").on("click",function(){mainView.router.navigate("/config/");})
+  $$("#volverNotifConfig").on("click",function(){mainView.router.navigate("/config/");});
 
   $$(".interruptor").on("click",function(){
     var elId = this.id;
@@ -143,10 +149,29 @@ $$(document).on('page:init', '.page[data-name="notifConfig"]', function (e) {
 $$(document).on('page:init', '.page[data-name="accesibilidad"]', function (e) {
   // Do something here when page with data-name="about" attribute loaded and initialized
   
-  $$("#volverAccesibilidad").on("click",function(){mainView.router.navigate("/config/");})
+  $$("#volverAccesibilidad").on("click",function(){mainView.router.navigate("/config/");});
 
 })
 
+$$(document).on('page:init', '.page[data-name="ayuda"]', function (e) {
+  // Do something here when page with data-name="about" attribute loaded and initialized
+  
+  $$("#volverAyuda").on("click",function(){mainView.router.navigate("/config/");});
+
+  $$("#ReportarProblema").on("click",function(){mainView.router.navigate("/reportarProblema/");});
+  $$("#PrivSeg").on("click",function(){mainView.router.navigate("/pivSeg/");});
+  $$("#FAQ").on("click",function(){mainView.router.navigate("/faq/");});
+})
+
+$$(document).on('page:init', '.page[data-name="preferencias"]', function (e) {
+  // Do something here when page with data-name="about" attribute loaded and initialized
+  
+  $$("#volverPreferencias").on("click",function(){mainView.router.navigate("/config/");});
+
+  $$("#ubicacionesPref").on("click",function(){mainView.router.navigate("/ubicacionesPref/");});
+  $$("#universidadesPref").on("click",function(){mainView.router.navigate("/universidadesPref/");});
+  $$("#carrerasPref").on("click",function(){mainView.router.navigate("/carrerasPref/");});
+})
 
 
 function ocultaNavTool() {

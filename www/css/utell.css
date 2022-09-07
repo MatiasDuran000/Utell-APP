@@ -298,6 +298,12 @@
     font-family:'Montserrat',sans-serif;
     font-size:12px;
     font-weight:400;
+    margin-left:20px;
+}
+
+.margen-derecha
+{
+    margin-right:20px;
 }
 
 .icono-volver
