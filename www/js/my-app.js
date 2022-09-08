@@ -33,6 +33,8 @@ var app = new Framework7({
       { path: '/ubicacionesPref/', url: 'ubicacionesPref.html', },
       { path: '/universidadesPref/', url: 'universidadesPref.html', },
       { path: '/carrerasPref/', url: 'carrerasPref.html', },
+      { path: '/perfil/', url: 'perfil.html', },
+
 
     ]
     // ... other parameters
@@ -171,6 +173,15 @@ $$(document).on('page:init', '.page[data-name="preferencias"]', function (e) {
   $$("#ubicacionesPref").on("click",function(){mainView.router.navigate("/ubicacionesPref/");});
   $$("#universidadesPref").on("click",function(){mainView.router.navigate("/universidadesPref/");});
   $$("#carrerasPref").on("click",function(){mainView.router.navigate("/carrerasPref/");});
+})
+
+$$(document).on('page:init', '.page[data-name="perfil"]', function (e) {
+  // Do something here when page with data-name="about" attribute loaded and initialized
+  
+  /*
+  $$("#agregarAmigo").on("click",function(){mainView.router.navigate("//");});
+  $$("#botonMensaje").on("click",function(){mainView.router.navigate("//");});
+  */
 })
 
 
