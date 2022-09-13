@@ -331,6 +331,7 @@
 .fotoperfil2
 {
     border:4px solid #fff;
+    margin-left:20px;
 }
 
 #botonMensaje
@@ -356,5 +357,17 @@
 {
     position:relative;
     bottom:75px;
-    left:20px;
+    display:flex;
+    justify-content:space-between;
+}
+
+.redes-sociales
+{
+    text-align:center;
+    display:flex;
+    justify-content:space-between;
+    width:97px;
+    height:21px;
+    position:relative;
+    bottom:24px;
 }
