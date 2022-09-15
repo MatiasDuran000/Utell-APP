@@ -34,6 +34,7 @@ var app = new Framework7({
       { path: '/universidadesPref/', url: 'universidadesPref.html', },
       { path: '/carrerasPref/', url: 'carrerasPref.html', },
       { path: '/perfil/', url: 'perfil.html', },
+      { path: '/md/', url: 'MD.html', },
 
 
     ]
@@ -64,7 +65,22 @@ $$(document).on('page:init', function (e,page) {
 
 $$(document).on('page:init', '.page[data-name="index"]', function (e) {
   // Do something here when page with data-name="about" attribute loaded and initialized
-  $$("#indexLogin").on("click", fnLogin);  
+  $$("#indexLogin").on("click", fnLogin);
+
+  $$(".botonToolbar").on("click",function(){
+    var botonId = this.id;
+
+    console.log(botonId)
+    if($$("#"+botonId).has("encendido"))
+    {}
+    else 
+    {
+      $$(".botonToolbar").removeClass("encendido");
+      $$("#"+botonId).addClass("encendido");
+    }
+
+    fnBotonToolbar(botonId);
+  })
 })
 
 
@@ -250,4 +266,23 @@ function fnInterruptor()
 {
   $$(".activado").attr("src","img/Activado.svg");
   $$(".desactivado").attr("src","img/Desactivado.svg");
+}
+
+function fnBotonToolbar()
+{
+  switch(botonId)
+  {
+    case homeBoton:
+      mainView.router.navigate("/feed/");
+    break;
+    case searchBoton:
+      mainView.router.navigate("/busqueda/");
+    break;
+    case mdBoton:
+      mainView.router.navigate("/md/");
+    break;
+    case perfilBoton:
+      mainView.router.navigate("/miPerfil/");
+    break;
+  }
 }
