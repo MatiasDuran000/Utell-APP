@@ -3,26 +3,57 @@
     <div class="page-content">    
         <div class="column">
             <img src="img/bannerDefault.svg" id="otroBanner" class="banner">
-        </div>
-        <div class="perfil ajustePerfil prueba1">
-            <div class="column">   
-                <div class="redes-sociales row">
-                    <img id="facebook" src="img/facebook.svg">
-                    <img id="twitter" src="img/twitter.svg">
-                    <img id="instagram" src="img/instagram.svg">
+            <div class="perfil ajustePerfil prueba1">
+                <div class="column" style="position:relative; bottom:96px;">   
+                    <div class="redes-sociales row">
+                        <img id="facebook" src="img/facebook.svg" style="margin-left:10px;">
+                        <img id="twitter" src="img/twitter.svg">
+                        <img id="instagram" src="img/instagram.svg" style="margin-right:10px;">
+                    </div>
+                    <div class="row" style="position:relative; bottom:10px; margin-right:20px;">
+                        <img id="agregarAmigo" src="img/agregarAmigo.svg">
+                        <button id="botonMensaje" style="margin-left:6px;">Mensaje</button>
+                    </div>
                 </div>
-                <div class="row" style="position:relative; bottom:10px; margin-right:20px;">
-                    <img id="agregarAmigo" src="img/agregarAmigo.svg">
-                    <button id="botonMensaje" style="margin-left:6px;">Mensaje</button>
+                <div class="perfil-y-datos">
+                    <img src="img/perfilDefault.svg" id="otroPerfilImg" class="fotoperfil fotoperfil2">
+                    <div class="info-perfil">
+                        <span class="a" id="otroPerfilNyA">Nombre Apellido</span>
+                        <span class="b" id="otroPerfilTipo">Estudiante</span>
+                        <span class="b" id="otroPerfilCiudad">Rosario</span>
+                        <span class="b" id="otroPerfilEdad">19 años</span>
+                        <span class="c" id="otroAmigos">26 amigos</span>
+                    </div>
                 </div>
             </div>
-            <img src="img/perfilDefault.svg" id="otroPerfilImg" class="fotoperfil fotoperfil2">
         </div>
-        <div class="block">
-            <span class="a" id="otroPerfilNyA"></span>
-            <span class="b" id="otroPerfilTipo"></span>
-            <span class="b" id="otroPerfilCiudad"></span>
-            <span class="b" id="otroPerfilEdad"></span>
+        <div class="column descr-inter">
+            <div class="caja-perfil">
+                <span class="descr-perfil">Descripción</span>
+                <span class="cont-perfil">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</span>
+            </div>
+            <br>
+            <div class="caja-perfil">
+                <span class="descr-perfil">Intereses</span>
+                <ul class="lista-intereses-perfil">
+                    <li id="interes-1" class="cont-perfil">
+                        Interes 1
+                    </li>
+                    <li id="interes-2" class="cont-perfil">
+                        Interes 2
+                    </li>
+                    <li id="interes-3" class="cont-perfil">
+                        Interes 3
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="column" id="actividadReciente">
+            <span class="descr-perfil" style="color:rgba(0,0,0,.8); margin-left:15px;">Actividad reciente</span>
+            <div class="boton-actividad">
+                <span class="descr-perfil" style="margin:18px;">ORT Argentina</span>
+                <span class="tipo-actividad">Experiencia</span>
+            </div>
         </div>
     </div>
 </div>

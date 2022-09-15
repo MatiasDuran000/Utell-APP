@@ -138,7 +138,7 @@
 .a
 {
     font-family:'Montserrat',sans-serif;
-    font-weight: 800;
+    font-weight: 700;
     font-size:15px;
     color:#ff6827;
 }
@@ -146,9 +146,17 @@
 .b
 {
     font-family:'Montserrat',sans-serif;
-    font-weight:600;
+    font-weight:400;
     font-size:12px;
     color:#b1b1b1;
+}
+
+.c
+{
+    font-family:'Montserrat',sans-serif;
+    font-weight:500;
+    font-size:13px;
+    color:#7cc8ff;
 }
 
 .botonPerfil{
@@ -195,7 +203,6 @@
 {
     display:flex;
     flex-direction:column;
-    margin-left:20px;
 }
 
 .botones-login
@@ -331,7 +338,6 @@
 .fotoperfil2
 {
     border:4px solid #fff;
-    margin-left:20px;
 }
 
 #botonMensaje
@@ -365,9 +371,100 @@
 {
     text-align:center;
     display:flex;
-    justify-content:space-between;
+    justify-content:space-around;
     width:97px;
     height:21px;
     position:relative;
     bottom:24px;
+    left:45px;
+    border-top-left-radius: 10px;
+    background-color: white;
+    align-items:center;
+}
+
+.perfil-y-datos
+{
+    margin-left:20px;
+    display:flex;
+    flex-direction:column;
+    align-content:flex-start;
+    justify-content:space-evenly;
+    align-items:flex-start;
+}
+
+.info-perfil
+{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.caja-perfil
+{
+    border-left:1px solid #ff6827;
+    margin-left:20px;
+    padding-left:15px;
+    text-align:start;
+    display:flex;
+    flex-direction:column;
+}
+
+.descr-perfil
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size:15px;
+    font-weight:400;
+}
+
+.cont-perfil
+{
+    font-family:'Montserrat',sans-serif;
+    font-size:12px;
+    font-weight:300;
+}
+
+.lista-intereses-perfil
+{
+    margin:0;
+    padding:0;
+    list-style-position: inside;
+}
+
+::marker
+{
+    color:black;
+    font-size:0.5em;
+}
+
+.descr-inter
+{
+    position:relative;
+    bottom:50px;
+}
+
+.boton-actividad
+{
+    width:318px;
+    height:54px;
+    display:flex;
+    justify-content:space-between;
+    border-radius:20px;
+    box-shadow:0px 4px 4px rgba(0,0,0,.15);
+}
+
+.tipo-actividad
+{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    color:rgba(0,0,0,.7);
+    margin:18px;
+}
+
+#actividadReciente
+{
+    text-align:start;
+    margin-left:20px;
+    position:relative;
+    bottom:30px;
 }
