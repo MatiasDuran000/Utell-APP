@@ -35,6 +35,7 @@ var app = new Framework7({
       { path: '/carrerasPref/', url: 'carrerasPref.html', },
       { path: '/perfil/', url: 'perfil.html', },
       { path: '/md/', url: 'MD.html', },
+      { path: '/amigos/', url: 'amigos.html', },
 
 
     ]
@@ -88,7 +89,7 @@ $$(document).on('page:init', '.page[data-name="miPerfil"]', function (e) {
   // Do something here when page with data-name="about" attribute loaded and initialized
   cargarMiPerfil();
   $$("#config").on("click", function(){mainView.router.navigate("/config/");});
-  $$("#misAmigos").on("click", function(){mainView.router.navigate("/misAmigos/");});
+  $$("#amigos").on("click", function(){mainView.router.navigate("/amigos/");});
   $$("#misXPs").on("click", function(){mainView.router.navigate("/misXPs/");});
   $$("#misConsultas").on("click", function(){mainView.router.navigate("/misConsultas/");});
   $$("#borradores").on("click", function(){mainView.router.navigate("/borradores/");});
@@ -199,6 +200,19 @@ $$(document).on('page:init', '.page[data-name="perfil"]', function (e) {
   $$("#botonMensaje").on("click",function(){mainView.router.navigate("//");});
   */
 })
+
+$$(document).on('page:init', '.page[data-name="amigos"]', function (e) {
+  // Do something here when page with data-name="about" attribute loaded and initialized
+  
+  $$("#volverAmigos").on("click",function(){mainView.router.navigate("/amigos/");});
+
+})
+
+
+
+
+
+
 
 
 function ocultaNavTool() {

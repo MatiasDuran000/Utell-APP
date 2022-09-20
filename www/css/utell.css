@@ -127,6 +127,14 @@
     align-items:flex-end;
 }
 
+#cont-perfil
+{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin-bottom:30px;
+}
+
 .perfil2
 {
     display:flex;
@@ -467,4 +475,9 @@
     margin-left:20px;
     position:relative;
     bottom:30px;
+}
+
+.busqueda-amigos
+{
+    border-radius:10px;
 }
