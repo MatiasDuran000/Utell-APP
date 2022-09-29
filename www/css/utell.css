@@ -480,4 +480,38 @@
 .busqueda-amigos
 {
     border-radius:10px;
+    border:1px solid #b1b1b1;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding-left:8px;
+    height:22px;
+    width:85%;
+}
+
+#busquedaAmigos::-webkit-search-cancel-button
+{
+    position:relative;
+    right:20px;
+}
+
+.unAmigo
+{
+    display:flex;
+    justify-content: space-between;
+    width: 85vw;
+}
+
+.div2
+{
+    display:flex;
+    align-items: center;
+}
+
+.nombre-amigo
+{
+    font-family:'Montserrat',sans-serif;
+    font-size:15px;
+    font-weight:500;
+    color:#ff6827;
 }

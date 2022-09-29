@@ -204,7 +204,7 @@ $$(document).on('page:init', '.page[data-name="perfil"]', function (e) {
 $$(document).on('page:init', '.page[data-name="amigos"]', function (e) {
   // Do something here when page with data-name="about" attribute loaded and initialized
   
-  $$("#volverAmigos").on("click",function(){mainView.router.navigate("/amigos/");});
+  $$("#volverAmigos").on("click",function(){mainView.router.navigate("/miPerfil/");});
 
 })
 
