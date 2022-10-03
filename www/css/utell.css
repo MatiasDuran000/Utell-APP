@@ -506,7 +506,14 @@
 {
     display:flex;
     align-items: center;
+    margin-top:20px;
 }
+
+
+.list .item-inner {
+   justify-content: flex-start;
+}
+
 
 .nombre-amigo
 {
