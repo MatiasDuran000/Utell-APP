@@ -500,14 +500,14 @@
     display:flex;
     justify-content: space-between;
     width: 85vw;
+    margin-top:5px;
+    margin-bottom:5px;
 }
 
 .div2
 {
     display:flex;
     align-items: center;
-    margin-top:10px;
-    margin-bottom:10px;
 }
 
 .nombre-amigo
@@ -516,11 +516,4 @@
     font-size:15px;
     font-weight:500;
     color:#ff6827;
-}
-
-.lista-amigo
-{
-    display:flex;
-    justify-content:space-around;
-    flex-direction:column;
 }
