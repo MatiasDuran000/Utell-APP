@@ -8,55 +8,51 @@
                 </div>
                 <div style="display:flex; justify-content:center;">
                     <div class="busqueda-amigos row">
-                        <img src="img/busqueda.svg" id="lupaAmigos"><input type="search" id="busquedaAmigos">
+                        <img src="img/busqueda.svg" id="lupaAmigos" style="margin-right:10px;"><input type="search" id="busquedaAmigos">
                     </div>
                 </div>
-                <div class="lista-amigos column">
+                <div class="lista-amigos">
                     <div id="amigo1" class="row unAmigo">
                         <div class="div2">
                             <img src="img/perfilDefault.svg" style="height:50px;width:50px;border-radius:50%;margin-right:10px;">
                             <span class="nombre-amigo">Nombre Apellido</span>
                         </div>
                         <div class="div2" style="height:50px;">
-                            <img src="img/avioncito.svg">
-                            <span class="eliminarAmigo">Eliminar</span>
+                            <img src="img/eliminarAmigo.svg">
                         </div>
                     </div>
-                    <div id="amigo1" class="row unAmigo">
+                    <img src="img/separadorAmigos.svg">
+                    <div id="amigo2" class="row unAmigo">
                         <div class="div2">
                             <img src="img/perfilDefault.svg" style="height:50px;width:50px;border-radius:50%;margin-right:10px;">
                             <span class="nombre-amigo">Nombre Apellido</span>
                         </div>
                         <div class="div2" style="height:50px;">
-                            <img src="img/avioncito.svg">
-                            <span class="eliminarAmigo">Eliminar</span>
+                            <img src="img/eliminarAmigo.svg">
                         </div>
                     </div>
-                    <div class="list">
-                        <ul>
-                        <li class="swipeout" @swipeout:deleted=${onDeleted}>
-                            <div class="item-content swipeout-content">
-                            <div class="item-inner">
-                                <img src="img/perfilDefault.svg" style="height:50px;width:50px;border-radius:50%;margin-right:10px;">
-                                <span class="item-title nombre-amigo">Nombre Apellido</span>
-                            </div>
-                            </div>
-                            <div class="swipeout-actions-right">
-                            <a href="#" class="swipeout-delete">Delete</a>
-                            </div>
-                        </li>
-                        <li class="swipeout" @swipeout:deleted=${onDeleted}>
-                            <div class="item-content swipeout-content">
-                            <div class="item-inner">
-                                <div class="item-title">Swipe left on me too</div>
-                            </div>
-                            </div>
-                            <div class="swipeout-actions-right">
-                            <a href="#" class="swipeout-delete">Delete</a>
-                            </div>
-                        </li>
-                        </ul>
+                    <img src="img/separadorAmigos.svg">
+                    <div id="amigo2" class="row unAmigo">
+                        <div class="div2">
+                            <img src="img/perfilDefault.svg" style="height:50px;width:50px;border-radius:50%;margin-right:10px;">
+                            <span class="nombre-amigo">Nombre Apellido</span>
+                        </div>
+                        <div class="div2" style="height:50px;">
+                            <img src="img/eliminarAmigo.svg">
+                        </div>
                     </div>
+                    <img src="img/separadorAmigos.svg">
+                    <div id="amigo2" class="row unAmigo">
+                        <div class="div2">
+                            <img src="img/perfilDefault.svg" style="height:50px;width:50px;border-radius:50%;margin-right:10px;">
+                            <span class="nombre-amigo">Nombre Apellido</span>
+                        </div>
+                        <div class="div2" style="height:50px;">
+                            <img src="img/eliminarAmigo.svg">
+                        </div>
+                    </div>
+                    <img src="img/separadorAmigos.svg">
+                    
                 </div>
             </div>
         </div>

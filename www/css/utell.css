@@ -482,7 +482,7 @@
     border-radius:10px;
     border:1px solid #b1b1b1;
     display:flex;
-    justify-content:space-between;
+    justify-content:flex-start;
     align-items:center;
     padding-left:8px;
     height:22px;
@@ -506,14 +506,9 @@
 {
     display:flex;
     align-items: center;
-    margin-top:20px;
+    margin-top:10px;
+    margin-bottom:10px;
 }
-
-
-.list .item-inner {
-   justify-content: flex-start;
-}
-
 
 .nombre-amigo
 {
@@ -521,4 +516,11 @@
     font-size:15px;
     font-weight:500;
     color:#ff6827;
+}
+
+.lista-amigo
+{
+    display:flex;
+    justify-content:space-around;
+    flex-direction:column;
 }
