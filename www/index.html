@@ -61,6 +61,7 @@
                     <div style="width:22px; height:22px;"></div>
                     <img id="mdBoton" src="img/MD.svg" class="botonToolbar">
                     <img id="perfilBoton" src="img/Perfil.svg" class="botonToolbar">
+
                 </div>
                 <div id="botonMasToolbar"><img src="img/BotonMás.svg" alt=""></div>
             </div>
@@ -86,14 +87,18 @@
                                 <div class="list no-hairlines-md">
                                         <!--Input email-->
                                         <div class="inputLogin">
-                                            <input id="indexEmail" type="email" placeholder="Ingrese su email">
+                                            <input id="indexEmail" type="email" class="input-login" placeholder="Ingrese su email">
                                         </div>
                                         <!--Input password-->
                                         <div class="inputLogin">
-                                            <input id="indexPass" type="password" placeholder="Ingrese su contraseña" />
+                                            <input id="indexPass" type="password" class="input-login" placeholder="Ingrese su contraseña" />
+                                        </div>
+                                        <div style="display:flex;flex-direction:row;justify-content:space-around;align-items:center;">
+                                            <label id="guardar-contraseña"><input type="checkbox" id="cbox1"> Guardar contraseña</label>
+                                            <a class="crear-cuenta" style="font-weight:400;">¿Olvidaste tu constraseña?</a>
                                         </div>
                                     <div class="botones-login">
-                                        <input type="button" id="indexLogin" class="boton" value="Iniciar sesión">
+                                        <input type="button" id="indexLogin" class="boton" value="Iniciar sesión" style="margin-top:35px;">
                                         <div class="crecue">
                                             <span class="crear-cuenta-q">¿No tienes una cuenta?</span>
                                             <a href="/registrarse/" class="crear-cuenta">Crear cuenta</a>
