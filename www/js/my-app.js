@@ -68,6 +68,7 @@ $$(document).on('page:init', function (e,page) {
 
 $$(document).on('page:init', '.page[data-name="index"]', function (e) {
   // Do something here when page with data-name="about" attribute loaded and initialized
+  $$("#Ojo1").on("click",fnOcultarPassword());
   $$("#indexLogin").on("click", fnLogin);
   $$("#crearCuenta").on("click", function(){mainView.router.navigate("/registrarse/");});
 
@@ -89,6 +90,9 @@ $$(document).on('page:init', '.page[data-name="index"]', function (e) {
 
 $$(document).on('page:init', '.page[data-name="registrarse"]', function (e) {
   // Do something here when page with data-name="about" attribute loaded and initialized
+  $$("#Ojo2").on("click",fnOcultarPassword());
+  $$("#Ojo3").on("click",fnOcultarPassword());
+
   $$("#registrarSiguiente").on("click", function(){mainView.router.navigate("/registrarse2/");});
 })
 
@@ -317,3 +321,58 @@ function fnBotonToolbar()
     break;
   }
 }
+
+function fnOjoLibreTachado()
+{
+  $$(".ocultarPass").attr("src","img/OjoTachado.svg");
+  $$(".mostrarPass").attr("src","img/OjoLibre.svg");
+}
+
+function fnOcultarPassword()
+{
+  var ojo = this.id;
+
+  if($$("#"+ojo).hasClass("ocultarPass"))
+    {
+      $$("#"+ojo).removeClass("ocultarPass").addClass("mostrarPass");
+    }
+  else 
+    {
+      $$("#"+ojo).removeClass("mostrarPass").addClass("ocultarPass");
+    }
+
+  fnOjoLibreTachado();
+  fnCambiarInput();
+}
+
+function fnCambiarInput()
+{
+  if(("#Ojo1").hasClass("mostrarPass"))
+  {
+    $$("#indexPass").attr("type","text");
+  }
+  else
+  {
+    $$("#indexPass").attr("type","password");
+  }
+
+  if(("#Ojo2").hasClass("mostrarPass"))
+  {
+    $$("#crearPass").attr("type","text");
+  }
+  else
+  {
+    $$("#crearPass").attr("type","password");
+  }
+
+  if(("#Ojo3").hasClass("mostrarPass"))
+  {
+    $$("#rePass").attr("type","text");
+  }
+  else
+  {
+    $$("#rePass").attr("type","password");
+  }
+}
+
+//agregar funcionalidad a #registrarSiguiente en /registrarse/
