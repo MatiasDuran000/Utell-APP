@@ -16,6 +16,8 @@ var app = new Framework7({
     routes: [
       { path: '/about/', url: 'about.html', },
       { path: '/registrarse/', url: 'registrarse.html', },
+      { path: '/registrarse2/', url: 'registrarse2.html', },
+      { path: '/registrarse3/', url: 'registrarse3.html', },
       { path: '/miPerfil/', url: 'miPerfil.html', },
       { path: '/perfil/', url: 'perfil.html', },
       { path: '/feed/', url: 'feed.html', },
@@ -55,7 +57,7 @@ $$(document).on('deviceready', function() {
 
 // Option 1. Using one 'page:init' handler for all pages
 $$(document).on('page:init', function (e,page) {
-    if (page.name=="index" || page.name=="registrarse" ) {
+    if (page.name=="index" || page.name=="registrarse" || page.name=="registrarse2" || page.name=="registrarse3") {
       ocultaNavTool();
     } else {
       muestraNavTool();
@@ -87,7 +89,17 @@ $$(document).on('page:init', '.page[data-name="index"]', function (e) {
 
 $$(document).on('page:init', '.page[data-name="registrarse"]', function (e) {
   // Do something here when page with data-name="about" attribute loaded and initialized
-  //$$("#config").on("click", function(){mainView.router.navigate("/config/");});
+  $$("#registrarSiguiente").on("click", function(){mainView.router.navigate("/registrarse2/");});
+})
+
+$$(document).on('page:init', '.page[data-name="registrarse2"]', function (e) {
+  // Do something here when page with data-name="about" attribute loaded and initialized
+  $$("#registrarCrearCuenta").on("click", function(){mainView.router.navigate("/registrarse3/");});
+})
+
+$$(document).on('page:init', '.page[data-name="registrarse3"]', function (e) {
+  // Do something here when page with data-name="about" attribute loaded and initialized
+  //$$("#registrarseFinalizar").on("click", function(){mainView.router.navigate("/config/");});
 })
 
 $$(document).on('page:init', '.page[data-name="miPerfil"]', function (e) {

@@ -557,5 +557,14 @@
     font-weight:400;
     border:0px;
     border-radius:14px;
-    margin-top:65%;
+    margin-top:55%;
+}
+
+.ojoPass
+{
+    position:relative;
+    bottom:3vh;
+    left:35vw;
+    color:#b1b1b1;
+    transform:scale(1.2);
 }
