@@ -67,6 +67,7 @@ $$(document).on('page:init', function (e,page) {
 $$(document).on('page:init', '.page[data-name="index"]', function (e) {
   // Do something here when page with data-name="about" attribute loaded and initialized
   $$("#indexLogin").on("click", fnLogin);
+  $$("#crearCuenta").on("click", function(){mainView.router.navigate("/registrarse/");});
 
   $$(".botonToolbar").on("click",function(){
     var botonId = this.id;
@@ -84,6 +85,10 @@ $$(document).on('page:init', '.page[data-name="index"]', function (e) {
   })
 })
 
+$$(document).on('page:init', '.page[data-name="registrarse"]', function (e) {
+  // Do something here when page with data-name="about" attribute loaded and initialized
+  //$$("#config").on("click", function(){mainView.router.navigate("/config/");});
+})
 
 $$(document).on('page:init', '.page[data-name="miPerfil"]', function (e) {
   // Do something here when page with data-name="about" attribute loaded and initialized

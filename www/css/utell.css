@@ -15,8 +15,8 @@
     color: #ffffff;
     border: 0px;
     border-radius: 14px;
-    width: 150px;
-    height: 33px;
+    width: 45%;
+    height: 4.5vh;
     margin-top: 10px;
     font-family:'Montserrat',sans-serif;
     font-weight: lighter;
@@ -28,7 +28,7 @@
     color:#ff6827;
     padding: 5px;
     border-radius: 10px;
-    width: 178px;
+    width: 50%;
     display:flex;
     justify-content:center;
 }
@@ -105,7 +105,7 @@
  
 .navbar
 {
-    height:50px;
+    height:7%;
 }
  
 .fotoperfil
@@ -169,10 +169,10 @@
 }
 
 .botonPerfil{
-    height:40px;
+    height:5.5vh;
+    width:95%;
     margin-top:15px;
     font-family:'Montserrat',sans-serif;
-    font-weight:500;
     font-size:12px;
     font-weight:400;
     background-color:white;
@@ -535,4 +535,27 @@
     color: #5f5f5f;
     display:flex;
     align-items:center;
+}
+
+.titulo-registrarse
+{
+    font-family:'Montserrat',sans-serif;
+    font-size:24px;
+    font-weight:700;
+    color:#ff6827;
+    margin-left:20px;
+}
+
+.boton-grande-gris
+{
+    width:95%;
+    height:5vh;
+    background-color:#b1b1b1;
+    color:white;
+    font-family:'Montserrat',sans-serif;
+    font-size:12px;
+    font-weight:400;
+    border:0px;
+    border-radius:14px;
+    margin-top:65%;
 }
