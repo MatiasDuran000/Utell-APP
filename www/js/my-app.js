@@ -93,7 +93,18 @@ $$(document).on('page:init', '.page[data-name="registrarse"]', function (e) {
   $$("#Ojo2").on("click",fnOcultarPassword());
   $$("#Ojo3").on("click",fnOcultarPassword());
 
-  $$("#registrarSiguiente").on("click", function(){mainView.router.navigate("/registrarse2/");});
+  var nombre = "";
+  var apellido = "";
+  var email = "";
+  var password = "";
+  var rePassword = "";
+
+  $$("#registrarSiguiente").on("click", function(){
+    $$("#crearPass").attr("type","password");
+    $$("#rePass").attr("type","password");
+    //guardar datos input
+    mainView.router.navigate("/registrarse2/");
+  });
 })
 
 $$(document).on('page:init', '.page[data-name="registrarse2"]', function (e) {
@@ -375,4 +386,3 @@ function fnCambiarInput()
   }
 }
 
-//agregar funcionalidad a #registrarSiguiente en /registrarse/

@@ -563,8 +563,8 @@
 .ojoPass
 {
     position:relative;
-    bottom:3vh;
-    left:35vw;
+    bottom:65%;
+    left:90%;
     color:#b1b1b1;
     transform:scale(1.2);
 }
