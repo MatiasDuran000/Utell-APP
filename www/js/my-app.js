@@ -96,7 +96,7 @@ var password = "";
 var rePassword = "";
 
 var ocupacion = "";
-var ciudad = "2000";
+var ciudad = "";
 var edad = "";
 var fotoPerfil = "";
 
@@ -124,15 +124,48 @@ $$(document).on('page:init', '.page[data-name="registrarse"]', function (e) {
     password = $$("#crearPass").val();
     rePassword = $$("#rePass").val();
 
+    if(nombre == "")
+    {
+      $$("#errorNombre").removeClass("oculto").addClass("visible");
+    }
+    else
+    {
+      $$("#errorNombre").removeClass("visible").addClass("oculto");
+    }
+
+    if(apellido == "")
+    {
+      $$("#errorApellido").removeClass("oculto").addClass("visible");
+    }
+    else
+    {
+      $$("#errorApellido").removeClass("visible").addClass("oculto");
+    }
+
+    if(email == "")
+    {
+      $$("#errorEmail").removeClass("oculto").addClass("visible");
+    }
+    else
+    {
+      $$("#errorEmail").removeClass("visible").addClass("oculto");
+    }
+
     if(password != rePassword)
     {
       $$("#errorPass").removeClass("oculto").addClass("visible");
     }
-    else
+    else if(password=="")
+    {
+      $$("#errorPassEmpty").removeClass("oculto").addClass("visible");
+    }
+    else 
     {
       $$("#errorPass").removeClass("visible").addClass("oculto");
       mainView.router.navigate("/registrarse2/");
     }
+
+
 
   });
 })
@@ -346,35 +379,14 @@ function fnLogin() {
 
 function fnSignup()
 {
-
-//console.log("fnSignup");
-
-  /*
-  var nombre = "";
-  var apellido = "";
-  var email = "";
-  var password = "";
-  var rePassword = "";
-
-  var ocupacion = "";
-  var ciudad = "2000";
-  var edad = "";
-
-  var instagram = "";
-  var twitter = "";
-  var facebook = "";
-  var intereses = "";
-  var descripcion = "";
-  fotoPerfil 
-*/
-tipoPerfil = "Estudiante";
+  tipoPerfil = "Estudiante";
   url = urlAPI+"usuarios/nuevo";
   app.request.post(url, { nombre:nombre, apellido:apellido, fNac:edad, 
     email:email, password:password, trayectoria:ocupacion, fotoPerfil:fotoPerfil, tipoPerfil:tipoPerfil,
   descripcion:descripcion, idCiudad: ciudad}, function(data) {
 
     console.log("devuelve > " + parseInt(data) );
-              //agregar foto perfil y redes sociales. Eliminar telefono
+              //Agregar redes sociales
               verId = data.replace('"', '');
               verId = verId.replace('"', '');
 
