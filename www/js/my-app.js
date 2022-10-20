@@ -68,7 +68,7 @@ $$(document).on('page:init', function (e,page) {
 
 $$(document).on('page:init', '.page[data-name="index"]', function (e) {
   // Do something here when page with data-name="about" attribute loaded and initialized
-  $$("#Ojo1").on("click",fnOcultarPassword());
+  $$("#Ojo1").on("click",fnOcultarPassword  );
   $$("#indexLogin").on("click", fnLogin);
   $$("#crearCuenta").on("click", function(){mainView.router.navigate("/registrarse/");});
 
@@ -88,33 +88,77 @@ $$(document).on('page:init', '.page[data-name="index"]', function (e) {
   })
 })
 
+
+var nombre = "";
+var apellido = "";
+var email = "";
+var password = "";
+var rePassword = "";
+
+var ocupacion = "";
+var ciudad = "";
+var edad = "";
+
+var instagram = "";
+var twitter = "";
+var facebook = "";
+var intereses = "";
+var descripcion = "";
+
+
 $$(document).on('page:init', '.page[data-name="registrarse"]', function (e) {
   // Do something here when page with data-name="about" attribute loaded and initialized
-  $$("#Ojo2").on("click",fnOcultarPassword());
-  $$("#Ojo3").on("click",fnOcultarPassword());
+  $$("#Ojo2").on("click",fnOcultarPassword );
+  $$("#Ojo3").on("click",fnOcultarPassword );
 
-  var nombre = "";
-  var apellido = "";
-  var email = "";
-  var password = "";
-  var rePassword = "";
 
   $$("#registrarSiguiente").on("click", function(){
     $$("#crearPass").attr("type","password");
     $$("#rePass").attr("type","password");
     //guardar datos input
-    mainView.router.navigate("/registrarse2/");
+
+    nombre = $$("#crearNombre").val();
+    apellido = $$("#crearApellido").val();
+    email = $$("#crearEmail").val();
+    password = $$("#crearPass").val();
+
+    if(password != rePassword)
+    {
+      $$("#errorPass").removeClass("oculto").addClass("visible");
+    }
+    else
+    {
+      $$("#errorPass").removeClass("visible").addClass("oculto");
+      mainView.router.navigate("/registrarse2/");
+    }
+
   });
 })
 
 $$(document).on('page:init', '.page[data-name="registrarse2"]', function (e) {
   // Do something here when page with data-name="about" attribute loaded and initialized
-  $$("#registrarCrearCuenta").on("click", function(){mainView.router.navigate("/registrarse3/");});
+  $$("#registrarCrearCuenta").on("click", function(){
+    
+    ocupacion = $$("#crearOcupacion").val();
+    ciudad = $$("#crearUbicacion").val();
+    edad = $$("#crearEdad").val();
+    
+    mainView.router.navigate("/registrarse3/");
+  });
 })
 
 $$(document).on('page:init', '.page[data-name="registrarse3"]', function (e) {
   // Do something here when page with data-name="about" attribute loaded and initialized
-  //$$("#registrarseFinalizar").on("click", function(){mainView.router.navigate("/config/");});
+  $$("#registrarseFinalizar").on("click", function(){
+    
+    instagram = $$("#crearInstagram").val();
+    twitter = $$("#crearTwitter").val();
+    facebook = $$("#crearFacebook").val();
+    intereses = $$("#crearIntereses").val();
+    descripcion = $$("#crearDescripcion").val();
+    
+    //mainView.router.navigate("/config/");
+  });
 })
 
 $$(document).on('page:init', '.page[data-name="miPerfil"]', function (e) {
@@ -271,11 +315,11 @@ function muestraNavTool() {
 
 /* MIS FUNCIONES */
 function fnLogin() {
-  email = $$("#indexEmail").val();
-  pass = $$("#indexPass").val();
+  email1 = $$("#indexEmail").val();
+  pass1 = $$("#indexPass").val();
 
   url = urlAPI+"login";
-    app.request.post(url, { email: email, password: pass }, function(data) {
+    app.request.post(url, { email: email1, password: pass1 }, function(data) {
 
                 var datos = JSON.parse(data); 
                 idUsuario = parseInt(datos[0].idUsuario);
@@ -295,6 +339,49 @@ function fnLogin() {
                 }
             
     });
+}
+
+function fnSignup()
+{
+  var nombre = "";
+  var apellido = "";
+  var email = "";
+  var password = "";
+  var rePassword = "";
+
+  var ocupacion = "";
+  var ciudad = "";
+  var edad = "";
+
+  var instagram = "";
+  var twitter = "";
+  var facebook = "";
+  var intereses = "";
+  var descripcion = "";
+
+  url = urlAPI+"usuarios/nuevo";
+  app.request.post(url, { nombre:nombre, apellido:apellido, fNac:edad, email:email, password:password, trayectoria:ocupacion,
+  descripcion:descripcion}, function(data) {
+              //agregar foto perfil y redes sociales. Eliminar telefono
+              var datos = JSON.parse(data); 
+              idUsuario = parseInt(datos[0].idUsuario);
+              nombre = datos[0].nombre;
+              apellido = datos[0].apellido;              
+              fNac=datos[0].fNac;
+              fotoPerfil=datos[0].fotoPerfil;
+              celular=datos[0].celular;
+              tipoPerfil=datos[0].tipoPerfil;
+              descripcion=datos[0].descripcion;
+              trayectoria=datos[0].trayectoria;
+              idCiudad=datos[0].idCiudad;
+              if (idUsuario>0) {
+                  mainView.router.navigate("/miPerfil/");
+              } else {
+                app.dialog.alert(data);
+              }
+          
+  });
+
 }
 
 function cargarMiPerfil(){
@@ -358,7 +445,7 @@ function fnOcultarPassword()
 
 function fnCambiarInput()
 {
-  if(("#Ojo1").hasClass("mostrarPass"))
+  if($$("#Ojo1").hasClass("mostrarPass"))
   {
     $$("#indexPass").attr("type","text");
   }
@@ -367,7 +454,7 @@ function fnCambiarInput()
     $$("#indexPass").attr("type","password");
   }
 
-  if(("#Ojo2").hasClass("mostrarPass"))
+  if($$("#Ojo2").hasClass("mostrarPass"))
   {
     $$("#crearPass").attr("type","text");
   }
@@ -376,7 +463,7 @@ function fnCambiarInput()
     $$("#crearPass").attr("type","password");
   }
 
-  if(("#Ojo3").hasClass("mostrarPass"))
+  if($$("#Ojo3").hasClass("mostrarPass"))
   {
     $$("#rePass").attr("type","text");
   }

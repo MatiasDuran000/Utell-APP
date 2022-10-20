@@ -568,3 +568,21 @@
     color:#b1b1b1;
     transform:scale(1.2);
 }
+
+.errorPassClass
+{
+    font-family:'Montserrat',sans-serif;
+    font-size:10px;
+    font-weight:300;
+    color:#ff0000;
+}
+
+.oculto
+{
+    visibility:hidden;
+}
+
+.visible
+{
+    visibility:visible;
+}
