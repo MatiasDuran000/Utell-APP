@@ -96,8 +96,9 @@ var password = "";
 var rePassword = "";
 
 var ocupacion = "";
-var ciudad = "";
+var ciudad = "2000";
 var edad = "";
+var fotoPerfil = "";
 
 var instagram = "";
 var twitter = "";
@@ -121,6 +122,7 @@ $$(document).on('page:init', '.page[data-name="registrarse"]', function (e) {
     apellido = $$("#crearApellido").val();
     email = $$("#crearEmail").val();
     password = $$("#crearPass").val();
+    rePassword = $$("#rePass").val();
 
     if(password != rePassword)
     {
@@ -149,14 +151,15 @@ $$(document).on('page:init', '.page[data-name="registrarse2"]', function (e) {
 
 $$(document).on('page:init', '.page[data-name="registrarse3"]', function (e) {
   // Do something here when page with data-name="about" attribute loaded and initialized
-  $$("#registrarseFinalizar").on("click", function(){
+  $$("#registrarFinalizar").on("click", function(){
     
     instagram = $$("#crearInstagram").val();
     twitter = $$("#crearTwitter").val();
     facebook = $$("#crearFacebook").val();
     intereses = $$("#crearIntereses").val();
     descripcion = $$("#crearDescripcion").val();
-    
+
+    fnSignup(); 
     //mainView.router.navigate("/config/");
   });
 })
@@ -343,6 +346,10 @@ function fnLogin() {
 
 function fnSignup()
 {
+
+//console.log("fnSignup");
+
+  /*
   var nombre = "";
   var apellido = "";
   var email = "";
@@ -350,7 +357,7 @@ function fnSignup()
   var rePassword = "";
 
   var ocupacion = "";
-  var ciudad = "";
+  var ciudad = "2000";
   var edad = "";
 
   var instagram = "";
@@ -358,22 +365,27 @@ function fnSignup()
   var facebook = "";
   var intereses = "";
   var descripcion = "";
-
+  fotoPerfil 
+*/
+tipoPerfil = "Estudiante";
   url = urlAPI+"usuarios/nuevo";
-  app.request.post(url, { nombre:nombre, apellido:apellido, fNac:edad, email:email, password:password, trayectoria:ocupacion,
-  descripcion:descripcion}, function(data) {
+  app.request.post(url, { nombre:nombre, apellido:apellido, fNac:edad, 
+    email:email, password:password, trayectoria:ocupacion, fotoPerfil:fotoPerfil, tipoPerfil:tipoPerfil,
+  descripcion:descripcion, idCiudad: ciudad}, function(data) {
+
+    console.log("devuelve > " + parseInt(data) );
               //agregar foto perfil y redes sociales. Eliminar telefono
-              var datos = JSON.parse(data); 
-              idUsuario = parseInt(datos[0].idUsuario);
-              nombre = datos[0].nombre;
-              apellido = datos[0].apellido;              
-              fNac=datos[0].fNac;
-              fotoPerfil=datos[0].fotoPerfil;
-              celular=datos[0].celular;
-              tipoPerfil=datos[0].tipoPerfil;
-              descripcion=datos[0].descripcion;
-              trayectoria=datos[0].trayectoria;
-              idCiudad=datos[0].idCiudad;
+              verId = data.replace('"', '');
+              verId = verId.replace('"', '');
+
+              if (verId==parseInt(verId)) {
+                // usuario creado
+                idUsuario = parseInt(verId);
+              } else {
+                var datos = JSON.parse(data);
+              
+              }
+              
               if (idUsuario>0) {
                   mainView.router.navigate("/miPerfil/");
               } else {
