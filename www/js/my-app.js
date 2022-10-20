@@ -124,6 +124,15 @@ $$(document).on('page:init', '.page[data-name="registrarse"]', function (e) {
     password = $$("#crearPass").val();
     rePassword = $$("#rePass").val();
 
+    /*
+    url = urlAPI+"login";
+    app.request.post(url, { email: email}, function(data) {
+
+    var datos = JSON.parse(data); 
+    email        
+    }
+    */
+
     if(nombre == "")
     {
       $$("#errorNombre").removeClass("oculto").addClass("visible");
@@ -145,6 +154,10 @@ $$(document).on('page:init', '.page[data-name="registrarse"]', function (e) {
     if(email == "")
     {
       $$("#errorEmail").removeClass("oculto").addClass("visible");
+    }
+    else if(email == emailComparador)
+    {
+
     }
     else
     {
@@ -168,7 +181,7 @@ $$(document).on('page:init', '.page[data-name="registrarse"]', function (e) {
 
 
   });
-})
+});
 
 $$(document).on('page:init', '.page[data-name="registrarse2"]', function (e) {
   // Do something here when page with data-name="about" attribute loaded and initialized
