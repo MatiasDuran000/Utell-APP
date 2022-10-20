@@ -98,8 +98,9 @@ var rePassword = "";
 var ocupacion = "";
 var ciudad = "";
 var edad = "";
-var fotoPerfil = "";
+var tipoPerfil = "";
 
+var fotoPerfil = "";
 var instagram = "";
 var twitter = "";
 var facebook = "";
@@ -124,15 +125,6 @@ $$(document).on('page:init', '.page[data-name="registrarse"]', function (e) {
     password = $$("#crearPass").val();
     rePassword = $$("#rePass").val();
 
-    /*
-    url = urlAPI+"login";
-    app.request.post(url, { email: email}, function(data) {
-
-    var datos = JSON.parse(data); 
-    email        
-    }
-    */
-
     if(nombre == "")
     {
       $$("#errorNombre").removeClass("oculto").addClass("visible");
@@ -154,10 +146,6 @@ $$(document).on('page:init', '.page[data-name="registrarse"]', function (e) {
     if(email == "")
     {
       $$("#errorEmail").removeClass("oculto").addClass("visible");
-    }
-    else if(email == emailComparador)
-    {
-
     }
     else
     {
@@ -190,6 +178,7 @@ $$(document).on('page:init', '.page[data-name="registrarse2"]', function (e) {
     ocupacion = $$("#crearOcupacion").val();
     ciudad = $$("#crearUbicacion").val();
     edad = $$("#crearEdad").val();
+    tipoPerfil = $$("input[type='radio'][name='tipo-perfil']:checked").val();
     
     mainView.router.navigate("/registrarse3/");
   });
