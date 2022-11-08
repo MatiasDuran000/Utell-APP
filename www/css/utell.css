@@ -586,3 +586,59 @@
 {
     visibility:visible;
 }
+
+input[type=text],input[type=password]
+{
+    padding-left:15px;
+}
+
+.fontFeed
+{
+    font-family:'Montserrat',sans-serif;
+    font-weight:400;
+}
+
+.nombreFeed
+{
+    font-size:11px;
+    color:#ff6827;
+}
+
+.rolFeed
+{
+    font-size:11px;
+    color: #b1b1b1;
+}
+
+.tituloFeed
+{
+    font-size:12px;
+}
+
+.bodyFeed
+{
+    font-size:10px;
+    width:250px;
+}
+
+.verMasFeed
+{
+    font-size:8px;
+    color:rgba(24,32,224,0.8);
+}
+
+.imgFeed
+{
+    width:54px;
+    height:54px;
+    border-radius:50%;
+}
+
+.divFeed
+{
+    width:75%;
+    display:flex;
+    flex-direction:column;
+    margin-left:20px;
+    text-align:left;
+}
