@@ -225,7 +225,10 @@ $$(document).on('page:init', '.page[data-name="feed"]', function (e) {
   $$("#botonFeed1").on("click", function() {
     $$("#botonFeed1").removeClass("inactivo").addClass("activo");
     $$("#botonFeed2").removeClass("activo").addClass("inactivo");
-    fnMostrarFeed();
+    fnOculultarFeed();
+    $$(".bodyFeed",".verMasFeed").on("click",function(){
+      fnMostrarFeed();
+    })
     //fnListaFeedsParaTi();
   } );
 
@@ -502,5 +505,5 @@ function fnCambiarInput()
 
 function fnMostrarFeed()
 {
-
+  
 }
