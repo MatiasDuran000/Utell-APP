@@ -623,7 +623,7 @@ input[type=text],input[type=password]
 
 .verMasFeed
 {
-    font-size:8px;
+    font-size:10px;
     color:rgba(24,32,224,0.8);
 }
 
@@ -641,4 +641,16 @@ input[type=text],input[type=password]
     flex-direction:column;
     margin-left:20px;
     text-align:left;
+}
+
+.botonesFeed
+{
+    font-size:9px;
+    color:#b1b1b1;
+}
+
+#fechaFeed
+{
+    font-size:8px;
+    color:#b1b1b1;
 }
