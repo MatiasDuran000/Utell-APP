@@ -21,6 +21,7 @@ var app = new Framework7({
       { path: '/miPerfil/', url: 'miPerfil.html', },
       { path: '/perfil/', url: 'perfil.html', },
       { path: '/feed/', url: 'feed.html', },
+      { path: '/unfeed/:id/', url: 'unfeed.html', },
       { path: '/busqueda/', url: 'busqueda.html', },
       { path: '/config/', url: 'configuracion.html', },
       { path: '/editarPerfil/', url: 'editarPerfil.html', },
@@ -76,7 +77,7 @@ $$(document).on('page:init', '.page[data-name="index"]', function (e) {
     var botonId = this.id;
 
     console.log(botonId)
-    if($$("#"+botonId).has("encendido"))
+    if($$("#"+botonId).hasClass("encendido"))
     {}
     else 
     {
@@ -221,15 +222,21 @@ $$(document).on('page:init', '.page[data-name="config"]', function (e) {
   $$("#ayuda").on("click", function(){mainView.router.navigate("/ayuda/");});
 })
 
+
+$$(document).on('page:init', '.page[data-name="unfeed"]', function (e, page) {
+    console.log(page.route.params.id);
+
+});
+
+
 $$(document).on('page:init', '.page[data-name="feed"]', function (e) {
+  fnListaFeedsParaTi();
+
   $$("#botonFeed1").on("click", function() {
     $$("#botonFeed1").removeClass("inactivo").addClass("activo");
     $$("#botonFeed2").removeClass("activo").addClass("inactivo");
-    fnOculultarFeed();
-    $$(".bodyFeed",".verMasFeed").on("click",function(){
-      fnMostrarFeed();
-    })
-    //fnListaFeedsParaTi();
+
+    fnListaFeedsParaTi();
   } );
 
   $$("#botonFeed2").on("click", function() {
@@ -503,7 +510,106 @@ function fnCambiarInput()
   }
 }
 
-function fnMostrarFeed()
-{
+function fnListaFeedsParaTi() {
+ console.log("cargo fnListaFeedsParaTi();") 
+
+  var requestOptions = {
+    method: 'GET',
+    redirect: 'follow'
+  };
   
+  fetch(urlAPI+"parati?idUsuario=1", requestOptions)
+    .then(response => response.json())
+    .then(result =>
+      {
+        console.log(result);
+ /*
+ [{"idPublicacion":"1","idUsuario":"2","fecha":"2022-08-30","hora":"15:56:14","idUniversidad":"1","idSede":"2","idCarrera":"1","texto":"Me
+gusta la UNR","likes":"1","idCiudad":"1"}]
+ 
+ 
+ */       
+        salida = "";
+
+        for (i=0; i<result.length; i++) {
+          idPublicacion  = result[i].idPublicacion
+          idUsuario = result[i].idUsuario
+          fecha = result[i].fecha
+          hora = result[i].hora
+          idUniversidad = result[i].idUniversidad
+          likes = result[i].likes
+          idCiudad = result[i].idCiudad
+          texto = result[i].texto;
+        
+          salida += `
+          <div class="row" style="justify-content:start;">
+                <img class="imgFeed" src="img/perfilDefault.svg">
+                <div class="divFeed">
+                    <div style="display:flex;flex-direction:row;justify-content:space-between;">
+                        <span onclick="myFunction()" class="fontFeed nombreFeed">${idUsuario}</span>
+                        <div>
+                          <img src="img/Tres puntos.svg">
+                          <div class="dropdown-content">
+                            <span>Guardar</span>
+                            <span>Reportar</span>
+                            <span>Compartir</span>
+                          </div>
+                        </div>
+                    </div>
+                    <span class="fontFeed rolFeed">Estudiante</span>
+                    <span class="fontFeed tituloFeed">${idUniversidad}</span>
+                    <a href="/unfeed/${idPublicacion}/" class="fontFeed bodyFeed">${texto}</span>
+                    <a href="/unfeed/${idPublicacion}/" class="fontFeed verMasFeed">Ver más</a>
+                    <div class="row">
+                        <div style="display:flex;justify-content:flex-start;">
+                            <div style="display:flex;align-items:center;">
+                                <img src="img/mensaje.svg">
+                                <span id="comentariosFeed" class="fontFeed botonesFeed" style="margin-left:3px;">30</span>
+                            </div>
+                            <div style="display:flex;align-items:center;margin-left:8px;">
+                                <img src="img/like.svg">
+                                <span id="likesFeed" class="fontFeed botonesFeed" style="margin-left:3px;">${likes}</span>
+                            </div>
+                        </div>
+                        <span id="fechaFeed" class="fontFeed">${fecha}</span>
+                    </div>
+                </div> 
+            </div>
+            <script>
+              function myFunction() {
+                document.getElementById("myDropdown").classList.toggle("show");
+              }
+
+              window.onclick = function(event) {
+                if (!event.target.matches('.dropbtn')) {
+                  var dropdowns = document.getElementsByClassName("dropdown-content");
+                  var i;
+                  for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                      openDropdown.classList.remove('show');
+                    }
+                  }
+                }
+              }
+              </script>
+          `;
+
+
+        }
+        
+        
+
+        $$("#feedLista").html(salida); 
+
+
+      }
+      
+      )
+    .catch(error => console.log('error', error));
+
+
 }
+
+
+//arreglar dropdown tres puntos
