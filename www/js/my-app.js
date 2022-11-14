@@ -534,9 +534,12 @@ gusta la UNR","likes":"1","idCiudad":"1"}]
         for (i=0; i<result.length; i++) {
           idPublicacion  = result[i].idPublicacion
           idUsuario = result[i].idUsuario
+          nombre = result[i].nombre
+          apellido = result[i].apellido
           fecha = result[i].fecha
           hora = result[i].hora
           idUniversidad = result[i].idUniversidad
+          universidad = result[i].universidad
           likes = result[i].likes
           idCiudad = result[i].idCiudad
           texto = result[i].texto;
@@ -546,7 +549,7 @@ gusta la UNR","likes":"1","idCiudad":"1"}]
                 <img class="imgFeed" src="img/perfilDefault.svg">
                 <div class="divFeed">
                     <div style="display:flex;flex-direction:row;justify-content:space-between;">
-                        <span onclick="myFunction()" class="fontFeed nombreFeed">${idUsuario}</span>
+                        <span onclick="myFunction()" class="fontFeed nombreFeed">${nombre} ${apellido}</span>
                         <div>
                           <img src="img/Tres puntos.svg">
                           <div class="dropdown-content">
@@ -557,7 +560,7 @@ gusta la UNR","likes":"1","idCiudad":"1"}]
                         </div>
                     </div>
                     <span class="fontFeed rolFeed">Estudiante</span>
-                    <span class="fontFeed tituloFeed">${idUniversidad}</span>
+                    <span class="fontFeed tituloFeed">${universidad}</span>
                     <a href="/unfeed/${idPublicacion}/" class="fontFeed bodyFeed">${texto}</span>
                     <a href="/unfeed/${idPublicacion}/" class="fontFeed verMasFeed">Ver más</a>
                     <div class="row">

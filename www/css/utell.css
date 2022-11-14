@@ -684,3 +684,7 @@ input[type=text],input[type=password]
 
 .show {display: block;}
 
+.mascara-recorte
+{
+    clip-path:ellipse(9.5vw 4vh at 50% 0px);
+}
