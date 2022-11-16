@@ -76,7 +76,6 @@ $$(document).on('page:init', '.page[data-name="index"]', function (e) {
   $$(".botonToolbar").on("click",function(){
     var botonId = this.id;
 
-    console.log(botonId)
     if($$("#"+botonId).hasClass("encendido"))
     {}
     else 
@@ -438,7 +437,7 @@ function fnInterruptor()
   $$(".desactivado").attr("src","img/Desactivado.svg");
 }
 
-function fnBotonToolbar()
+function fnBotonToolbar(botonId)
 {
   switch(botonId)
   {
