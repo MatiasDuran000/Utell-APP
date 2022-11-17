@@ -246,6 +246,12 @@ $$(document).on('page:init', '.page[data-name="feed"]', function (e) {
 
 })
 
+$$(document).on('page:init', '.page[data-name="md"]', function (e) {
+  // Do something here when page with data-name="about" attribute loaded and initialized
+  //agregar funcion notificacion
+  fnMostrarMds();
+})
+
 $$(document).on('page:init', '.page[data-name="about"]', function (e) {
     // Do something here when page with data-name="about" attribute loaded and initialized
     
@@ -613,5 +619,10 @@ gusta la UNR","likes":"1","idCiudad":"1"}]
 
 }
 
-
-//arreglar dropdown tres puntos
+function fnMostrarMds() {
+ //hacer
+ 
+ }
+ 
+ 
+ //arreglar dropdown tres puntos
